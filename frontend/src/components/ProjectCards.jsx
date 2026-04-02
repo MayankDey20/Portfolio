@@ -29,45 +29,22 @@ const OrbVisual = ({ type }) => {
 }
 
 export const ProjectCards = () => {
-  const [projects, setProjects] = useState([
-    { 
-      id: 1, 
-      title: 'QUANTUM VISION', 
-      imagePlaceholder: 'orb-blue', 
-      category: 'INTERFACE',
-      techStack: [
-        { name: 'PYTHON', color: '#3776AB', pos: [-2, 0, 0] },
-        { name: 'REACT', color: '#61DAFB', pos: [0, 0, 0] },
-        { name: 'TS', color: '#3178C6', pos: [2, 0, 0] }
-      ]
-    },
-    { 
-      id: 2, 
-      title: 'NEURAL INTERFACE', 
-      imagePlaceholder: 'orb-purple', 
-      category: 'VISUALIZATION',
-      techStack: [
-        { name: 'NODE', color: '#339933', pos: [-2, 0, 0] },
-        { name: 'REDIS', color: '#DC382D', pos: [0, 0, 0] },
-        { name: 'AWS', color: '#FF9900', pos: [2, 0, 0] }
-      ]
-    },
-    { 
-      id: 3, 
-      title: 'VOID EXPLORER', 
-      imagePlaceholder: 'orb-cyan', 
-      category: 'IMMERSIVE',
-      techStack: [
-        { name: 'UNITY', color: '#ffffff', pos: [-2, 0, 0] },
-        { name: 'THREE.JS', color: '#ffffff', pos: [0, 0, 0] },
-        { name: 'C#', color: '#178600', pos: [2, 0, 0] }
-      ]
-    }
-  ])
-  const [loading, setLoading] = useState(false)
+  const [projects, setProjects] = useState([])
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    // API bypass for stability - maintaining useEffect for structure
+    const fetchProjects = async () => {
+      try {
+        setLoading(true)
+        const response = await axios.get('/api/projects')
+        setProjects(response.data)
+      } catch (error) {
+        console.error('Error fetching projects:', error)
+      } finally {
+        setLoading(false)
+      }
+    }
+    fetchProjects()
   }, [])
 
   const containerVariants = {
@@ -83,6 +60,23 @@ export const ProjectCards = () => {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 },
   }
+
+  useEffect(() => {
+    // Surgical removal of the Spline watermark from all spline-viewers in this section
+    const checkShadowRoot = setInterval(() => {
+      const viewers = document.querySelectorAll('spline-viewer');
+      viewers.forEach(viewer => {
+        if (viewer && viewer.shadowRoot) {
+          const logo = viewer.shadowRoot.querySelector('#logo');
+          if (logo) {
+            logo.style.display = 'none';
+          }
+        }
+      });
+    }, 100);
+
+    return () => clearInterval(checkShadowRoot);
+  }, []);
 
   if (loading) {
     return <div className="h-64 flex items-center justify-center text-white/20 font-mono tracking-widest uppercase text-xs">Initializing...</div>
@@ -113,15 +107,32 @@ export const ProjectCards = () => {
               variants={cardVariants}
               whileHover={{ scale: 1.02, transition: { duration: 0.5, ease: "easeOut" } }}
             >
-              {/* Animated Background Glow */}
+              {/* Behind-the-Box Backlight Glow */}
+              <div className="absolute inset-[-40px] bg-purple-600/20 blur-[120px] rounded-full z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-[2000ms] pointer-events-none" />
+
+              {/* Animated Floating Background Glow */}
               <div className={`absolute top-1/2 left-1/2 w-[500px] h-[500px] bg-gradient-to-br ${
                 project.imagePlaceholder === 'orb-purple' ? 'from-purple-600/20' : 
                 project.imagePlaceholder === 'orb-cyan' ? 'from-cyan-600/20' : 'from-blue-600/20'
               } to-transparent blur-[120px] rounded-full z-0 pointer-events-none animate-breathing-glow`} />
 
-              <div className="glass-panel relative z-10 w-full h-[400px] overflow-hidden flex flex-col rounded-2xl">
-                <div className="absolute inset-0 z-0 opacity-40 group-hover:opacity-80 transition-opacity duration-1000">
-                  <OrbVisual type={project.imagePlaceholder} />
+              <div className="glass-panel relative z-10 w-full h-[400px] overflow-hidden flex flex-col rounded-2xl border border-white/5 shadow-2xl">
+                <div className="absolute inset-0 z-0 opacity-100 transition-opacity duration-1000">
+                  {project.splineUrl ? (
+                    <div className="absolute inset-0 w-full h-full transform scale-[0.45] -translate-x-[32%] -translate-y-[18%] group-hover:scale-[0.48] transition-transform duration-[2000ms] ease-out pointer-events-none flex items-center justify-center">
+                      <spline-viewer 
+                        url={project.splineUrl} 
+                        events-target="global" 
+                        style={{ width: '100%', height: '100%', filter: 'brightness(1.6) contrast(1.1)' }} 
+                        hint="none" 
+                        loading="lazy" 
+                      />
+                    </div>
+                  ) : (
+                    <div className="absolute inset-0 opacity-40 group-hover:opacity-80 transition-opacity duration-1000">
+                      <OrbVisual type={project.imagePlaceholder} />
+                    </div>
+                  )}
                 </div>
                 
                 {/* Card Content Overlay */}

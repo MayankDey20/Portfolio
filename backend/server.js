@@ -8,7 +8,9 @@ const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
 
 const app = express()
-const PORT = process.env.PORT || 5000
+const PORT = process.env.PORT || 5001
+
+export { app }
 
 // Middleware
 app.use(cors())
@@ -17,10 +19,11 @@ app.use(express.json())
 const mockProjects = [
   {
     id: 1,
-    title: 'Quantum Vision',
+    title: 'CyberOps',
     category: 'INTERFACE',
     imagePlaceholder: 'orb-blue',
-    description: 'A visionary project exploring quantum computing interfaces',
+    splineUrl: 'https://prod.spline.design/CVAJTOdIz-o93tKW/scene.splinecode',
+    description: 'A tactical operations interface visualizing complex data streams in 3D.',
     techStack: [
       { name: 'PYTHON', color: '#3776AB', pos: [-2, 0, 0] },
       { name: 'REACT', color: '#61DAFB', pos: [0, 0, 0] },
@@ -82,7 +85,9 @@ app.use((err, req, res, next) => {
   res.status(500).json({ error: 'Internal server error' })
 })
 
-app.listen(PORT, () => {
-  console.log(`🚀 Server running at http://localhost:${PORT}`)
-  console.log(`📦 API available at http://localhost:${PORT}/api/projects`)
-})
+if (process.env.NODE_ENV !== 'production') {
+  app.listen(PORT, () => {
+    console.log(`🚀 Server running at http://localhost:${PORT}`)
+    console.log(`📦 API available at http://localhost:${PORT}/api/projects`)
+  })
+}
