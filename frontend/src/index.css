@@ -32,9 +32,7 @@ html.lenis body {
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
-}
+/* Native smooth scroll removed to prevent conflict with Lenis engine */
 
 html,
 body,
