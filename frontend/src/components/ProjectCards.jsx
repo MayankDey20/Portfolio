@@ -29,6 +29,8 @@ const OrbVisual = ({ type }) => {
 }
 
 export const ProjectCards = () => {
+  const [loading, setLoading] = useState(true)
+  const [flippedId, setFlippedId] = useState(null)
   const [projects, setProjects] = useState([
     { 
       id: 1, 
@@ -38,6 +40,8 @@ export const ProjectCards = () => {
       glowColor: 'blue',
       splineUrl: 'https://prod.spline.design/CVAJTOdIz-o93tKW/scene.splinecode',
       splineConfig: { scale: 0.45, x: -32, y: -18 },
+      description: 'SecureScan Pro is an advanced, distributed web vulnerability scanner and threat intelligence platform. It provides organizations and security professionals with a unified dashboard to proactively discover, analyze, and remediate security flaws across their web infrastructure.\n\nBy combining active vulnerability scanning with machine learning-powered threat intelligence and real-time reporting, SecureScan Pro offers a holistic view of an asset\'s security posture.',
+      githubUrl: 'https://github.com/MayankDey20/SecureScanPro',
       techStack: [
         { name: 'PYTHON', color: '#3776AB', pos: [-2, 0, 0] },
         { name: 'REACT', color: '#61DAFB', pos: [0, 0, 0] },
@@ -52,6 +56,8 @@ export const ProjectCards = () => {
       glowColor: 'purple',
       splineUrl: 'https://prod.spline.design/QPKs0kpS2CvawGmE/scene.splinecode',
       splineConfig: { scale: 0.45, x: -5, y: -10 },
+      description: 'Narrative Flow is an AI-powered story co-writing platform that harmonizes human creativity with large language models. It offers a dynamic environment for novelists and screenwriters to brainstorm, structure, and refine complex narratives in real-time.',
+      githubUrl: 'https://github.com/MayankDey20/NarrativeFlow',
       techStack: [
         { name: 'NODE', color: '#339933', pos: [-2, 0, 0] },
         { name: 'REDIS', color: '#DC382D', pos: [0, 0, 0] },
@@ -64,6 +70,8 @@ export const ProjectCards = () => {
       imagePlaceholder: 'orb-cyan', 
       category: 'IMMERSIVE',
       glowColor: 'green',
+      description: 'TribalBridge is a cross-platform infrastructure layer designed to connect decentralized communities through high-fidelity immersive environments. It serves as a bridge between legacy social systems and the evolving spatial web.',
+      githubUrl: 'https://github.com/MayankDey20/TribalBridge',
       techStack: [
         { name: 'UNITY', color: '#ffffff', pos: [-2, 0, 0] },
         { name: 'THREE.JS', color: '#ffffff', pos: [0, 0, 0] },
@@ -71,8 +79,6 @@ export const ProjectCards = () => {
       ]
     }
   ])
-  const [loading, setLoading] = useState(false)
-
   useEffect(() => {
     const fetchProjects = async () => {
       const controller = new AbortController();
@@ -143,101 +149,162 @@ export const ProjectCards = () => {
         </div>
 
         <div className="flex flex-col gap-48 w-full">
-          {projects.map((project, index) => (
-            <motion.div
-              key={project.id}
-              className={`group relative w-full md:w-[600px] flex flex-col min-h-[600px] cursor-pointer ${
-                index % 2 === 0 ? 'self-start' : 'self-end'
-              }`}
-              variants={cardVariants}
-              whileHover={{ scale: 1.02, transition: { duration: 0.5, ease: "easeOut" } }}
-            >
-              {/* Behind-the-Box Backlight Glow */}
-              <div className={`absolute inset-[-40px] blur-[120px] rounded-full z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-[2000ms] pointer-events-none ${
-                project.glowColor === 'blue' ? 'bg-blue-600/20' : 
-                project.glowColor === 'green' ? 'bg-green-600/20' : 
-                'bg-purple-600/20'
-              }`} />
+          {projects.map((project, index) => {
+            const isFlipped = flippedId === project.id;
+            
+            return (
+              <div key={project.id} className={`w-full md:w-[600px] ${index % 2 === 0 ? 'self-start' : 'self-end'}`}>
+                <motion.div
+                  className="group relative w-full flex flex-col min-h-[600px] cursor-pointer"
+                  variants={cardVariants}
+                  animate={isFlipped ? { rotateY: 180 } : { rotateY: 0 }}
+                  transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
+                  style={{ transformStyle: 'preserve-3d' }}
+                >
+                  {/* Behind-the-Box Backlight Glow */}
+                  <div className={`absolute inset-[-40px] blur-[120px] rounded-full z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-[2000ms] pointer-events-none ${
+                    project.glowColor === 'blue' ? 'bg-blue-600/20' : 
+                    project.glowColor === 'green' ? 'bg-green-600/20' : 
+                    'bg-purple-600/20'
+                  }`} />
 
-              {/* Animated Floating Background Glow */}
-              <div className={`absolute top-1/2 left-1/2 w-[500px] h-[500px] bg-gradient-to-br ${
-                project.imagePlaceholder === 'orb-purple' ? 'from-purple-600/20' : 
-                project.imagePlaceholder === 'orb-cyan' ? 'from-cyan-600/20' : 'from-blue-600/20'
-              } to-transparent blur-[120px] rounded-full z-0 pointer-events-none animate-breathing-glow`} />
+                  {/* FRONT SIDE */}
+                  <div className="absolute inset-0 w-full h-[400px]" style={{ backfaceVisibility: 'hidden' }}>
+                    <div className="glass-panel relative z-10 w-full h-full overflow-hidden flex flex-col rounded-2xl border border-white/5 shadow-2xl">
+                      <div className="absolute inset-0 z-0 opacity-100 transition-opacity duration-1000">
+                        {project.splineUrl ? (
+                          <div 
+                            className="absolute inset-0 w-full h-full transform group-hover:scale-[0.48] transition-transform duration-[2000ms] ease-out pointer-events-none flex items-center justify-center"
+                            style={{ 
+                              transform: `scale(${project.splineConfig?.scale || 0.45}) translate(${project.splineConfig?.x || 0}%, ${project.splineConfig?.y || 0}%)` 
+                            }}
+                          >
+                            <spline-viewer 
+                              url={project.splineUrl} 
+                              events-target="global" 
+                              style={{ width: '100%', height: '100%', filter: 'brightness(1.6) contrast(1.1)' }} 
+                              hint="none" 
+                              loading="lazy" 
+                            />
+                          </div>
+                        ) : (
+                          <div className="absolute inset-0 opacity-40 group-hover:opacity-80 transition-opacity duration-1000">
+                            <OrbVisual type={project.imagePlaceholder} />
+                          </div>
+                        )}
+                      </div>
+                      
+                      {/* Card Content Overlay */}
+                      <div className="relative z-10 p-12 flex flex-col justify-end bg-gradient-to-t from-black/95 via-black/40 to-transparent flex-grow">
+                        <span className={`text-[10px] tracking-[0.6em] font-mono mb-3 uppercase ${
+                          project.glowColor === 'blue' ? 'text-blue-400/60' : 
+                          project.glowColor === 'green' ? 'text-green-400/60' : 
+                          'text-purple-400/60'
+                        }`}>
+                          {project.category || 'PROJECT'}
+                        </span>
+                        <h3 className={`text-white text-3xl md:text-4xl font-bold tracking-tighter mb-6 transition-colors duration-500 ${
+                          project.glowColor === 'blue' ? 'group-hover:text-blue-400' : 
+                          project.glowColor === 'green' ? 'group-hover:text-green-400' : 
+                          'group-hover:text-purple-400'
+                        }`}>
+                          {project.title}
+                        </h3>
+                        
+                        <div className="mb-4">
+                          <button 
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              setFlippedId(project.id);
+                            }}
+                            className={`text-xs tracking-[0.4em] uppercase font-bold transition-all duration-300 hover:tracking-[0.5em] ${
+                            project.glowColor === 'blue' ? 'text-blue-400/80 hover:text-blue-300' : 
+                            project.glowColor === 'green' ? 'text-green-400/80 hover:text-green-300' : 
+                            'text-purple-400/80 hover:text-purple-300'
+                          }`}>
+                            Explore Concept →
+                          </button>
+                        </div>
+                      </div>
 
-              <div className="glass-panel relative z-10 w-full h-[400px] overflow-hidden flex flex-col rounded-2xl border border-white/5 shadow-2xl">
-                <div className="absolute inset-0 z-0 opacity-100 transition-opacity duration-1000">
-                  {project.splineUrl ? (
-                    <div 
-                      className="absolute inset-0 w-full h-full transform group-hover:scale-[0.48] transition-transform duration-[2000ms] ease-out pointer-events-none flex items-center justify-center"
-                      style={{ 
-                        transform: `scale(${project.splineConfig?.scale || 0.45}) translate(${project.splineConfig?.x || 0}%, ${project.splineConfig?.y || 0}%)` 
-                      }}
-                    >
-                      <spline-viewer 
-                        url={project.splineUrl} 
-                        events-target="global" 
-                        style={{ width: '100%', height: '100%', filter: 'brightness(1.6) contrast(1.1)' }} 
-                        hint="none" 
-                        loading="lazy" 
-                      />
+                      {/* Card Outer Border Shine */}
+                      <div className={`absolute inset-0 border transition-colors duration-1000 ${
+                        project.glowColor === 'blue' ? 'border-blue-500/10 group-hover:border-blue-500/30' : 
+                        project.glowColor === 'green' ? 'border-green-500/10 group-hover:border-green-500/30' : 
+                        'border-purple-500/10 group-hover:border-purple-500/30'
+                      }`} />
                     </div>
-                  ) : (
-                    <div className="absolute inset-0 opacity-40 group-hover:opacity-80 transition-opacity duration-1000">
-                      <OrbVisual type={project.imagePlaceholder} />
-                    </div>
-                  )}
-                </div>
-                
-                {/* Card Content Overlay */}
-                <div className="relative z-10 p-12 flex flex-col justify-end bg-gradient-to-t from-black/95 via-black/40 to-transparent flex-grow">
-                  <span className={`text-[10px] tracking-[0.6em] font-mono mb-3 uppercase ${
-                    project.glowColor === 'blue' ? 'text-blue-400/60' : 
-                    project.glowColor === 'green' ? 'text-green-400/60' : 
-                    'text-purple-400/60'
-                  }`}>
-                    {project.category || 'PROJECT'}
-                  </span>
-                  <h3 className={`text-white text-3xl md:text-4xl font-bold tracking-tighter mb-6 transition-colors duration-500 ${
-                    project.glowColor === 'blue' ? 'group-hover:text-blue-400' : 
-                    project.glowColor === 'green' ? 'group-hover:text-green-400' : 
-                    'group-hover:text-purple-400'
-                  }`}>
-                    {project.title}
-                  </h3>
-                  
-                  <div className="mb-4">
-                    <button className={`text-xs tracking-[0.4em] uppercase font-bold transition-all duration-300 hover:tracking-[0.5em] ${
-                      project.glowColor === 'blue' ? 'text-blue-400/80 hover:text-blue-300' : 
-                      project.glowColor === 'green' ? 'text-green-400/80 hover:text-green-300' : 
-                      'text-purple-400/80 hover:text-purple-300'
-                    }`}>
-                      Explore Concept →
-                    </button>
                   </div>
-                </div>
 
-                {/* Card Outer Border Shine */}
-                <div className={`absolute inset-0 border transition-colors duration-1000 ${
-                  project.glowColor === 'blue' ? 'border-blue-500/10 group-hover:border-blue-500/30' : 
-                  project.glowColor === 'green' ? 'border-green-500/10 group-hover:border-green-500/30' : 
-                  'border-purple-500/10 group-hover:border-purple-500/30'
-                }`} />
-              </div>
+                  {/* BACK SIDE (Briefcase) */}
+                  <div className="absolute inset-0 w-full h-[400px]" style={{ backfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}>
+                    <div className={`glass-panel relative z-10 w-full h-full p-12 flex flex-col rounded-2xl border bg-black/40 backdrop-blur-3xl shadow-2xl ${
+                      project.glowColor === 'blue' ? 'border-blue-500/30' : 
+                      project.glowColor === 'green' ? 'border-green-500/30' : 
+                      'border-purple-500/30'
+                    }`}>
+                      <div className="flex justify-between items-start mb-8">
+                        <div>
+                          <h4 className={`text-[10px] tracking-[0.6em] font-mono mb-2 uppercase ${
+                            project.glowColor === 'blue' ? 'text-blue-400' : 
+                            project.glowColor === 'green' ? 'text-green-400' : 
+                            'text-purple-400'
+                          }`}>Tech Briefcase</h4>
+                          <h3 className="text-white text-2xl font-bold tracking-tight">{project.title}</h3>
+                        </div>
+                        
+                        {project.githubUrl && (
+                          <a 
+                            href={project.githubUrl} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            onClick={(e) => e.stopPropagation()}
+                            className={`p-3 rounded-full border transition-all duration-300 ${
+                              project.glowColor === 'blue' ? 'border-blue-500/20 hover:bg-blue-500/20 text-blue-400' : 
+                              project.glowColor === 'green' ? 'border-green-500/20 hover:bg-green-400/20 text-green-400' : 
+                              'border-purple-500/20 hover:bg-purple-500/20 text-purple-400'
+                            }`}
+                          >
+                            <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+                              <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+                            </svg>
+                          </a>
+                        )}
+                      </div>
 
-              {/* 3D Tech Signature - Resided UNDER the box */}
-              <div className="w-full relative z-30 mt-12 pointer-events-auto">
-                <div className={`text-[10px] tracking-[0.5em] font-mono mb-4 uppercase opacity-50 pl-4 border-l-2 ${
-                  project.glowColor === 'blue' ? 'text-blue-400 border-blue-500/30' : 
-                  project.glowColor === 'green' ? 'text-green-400 border-green-500/30' : 
-                  'text-purple-400 border-purple-500/30'
-                }`}>
-                  Tech Architecture
-                </div>
-                <ProjectTechCubes techs={project.techStack} />
+                      <div className="flex-grow overflow-auto mb-8 pr-2 custom-scrollbar">
+                        <p className="text-white/80 text-sm leading-relaxed font-light font-mono italic">
+                          {project.description}
+                        </p>
+                      </div>
+
+                      <button 
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setFlippedId(null);
+                        }}
+                        className={`mt-auto text-[10px] tracking-[0.4em] uppercase font-bold text-white/40 hover:text-white transition-colors py-4 border-t border-white/5 w-full text-center`}
+                      >
+                        ← Back to Showcase
+                      </button>
+                    </div>
+                  </div>
+
+                  {/* 3D Tech Signature - Resided UNDER the box */}
+                  <div className="w-full relative z-30 mt-12 pointer-events-auto" style={{ backfaceVisibility: 'hidden' }}>
+                    <div className={`text-[10px] tracking-[0.5em] font-mono mb-4 uppercase opacity-50 pl-4 border-l-2 ${
+                      project.glowColor === 'blue' ? 'text-blue-400 border-blue-500/30' : 
+                      project.glowColor === 'green' ? 'text-green-400 border-green-500/30' : 
+                      'text-purple-400 border-purple-500/30'
+                    }`}>
+                      Tech Architecture
+                    </div>
+                    <ProjectTechCubes techs={project.techStack} />
+                  </div>
+                </motion.div>
               </div>
-            </motion.div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </motion.section>

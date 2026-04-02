@@ -12,9 +12,11 @@ const mockProjects = [
     title: 'SecureScan Pro',
     category: 'Automated Web Application Vulnerability Scanner',
     glowColor: 'blue',
-    imagePlaceholder: 'orb-blue',
     splineUrl: 'https://prod.spline.design/CVAJTOdIz-o93tKW/scene.splinecode',
     splineConfig: { scale: 0.45, x: -32, y: -18 },
+    description: 'SecureScan Pro is an advanced, distributed web vulnerability scanner and threat intelligence platform. It provides organizations and security professionals with a unified dashboard to proactively discover, analyze, and remediate security flaws across their web infrastructure.\n\nBy combining active vulnerability scanning with machine learning-powered threat intelligence and real-time reporting, SecureScan Pro offers a holistic view of an asset\'s security posture.',
+    githubUrl: 'https://github.com/MayankDey20/SecureScanPro',
+    imagePlaceholder: 'orb-blue',
     description: 'A tactical operations interface visualizing complex data streams in 3D.',
     techStack: [
       { name: 'PYTHON', color: '#3776AB', pos: [-2, 0, 0] },
@@ -29,6 +31,8 @@ const mockProjects = [
     glowColor: 'purple',
     splineUrl: 'https://prod.spline.design/QPKs0kpS2CvawGmE/scene.splinecode',
     splineConfig: { scale: 0.45, x: -5, y: -10 },
+    description: 'Narrative Flow is an AI-powered story co-writing platform that harmonizes human creativity with large language models. It offers a dynamic environment for novelists and screenwriters to brainstorm, structure, and refine complex narratives in real-time.',
+    githubUrl: 'https://github.com/MayankDey20/NarrativeFlow',
     imagePlaceholder: 'orb-purple',
     description: 'Next-generation neural network visualization platform',
     techStack: [
@@ -42,6 +46,8 @@ const mockProjects = [
     title: 'TribalBridge',
     category: 'IMMERSIVE',
     glowColor: 'green',
+    description: 'TribalBridge is a cross-platform infrastructure layer designed to connect decentralized communities through high-fidelity immersive environments. It serves as a bridge between legacy social systems and the evolving spatial web.',
+    githubUrl: 'https://github.com/MayankDey20/TribalBridge',
     imagePlaceholder: 'orb-cyan',
     description: 'Immersive space exploration experience',
     techStack: [
