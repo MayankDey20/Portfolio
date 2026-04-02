@@ -35,6 +35,7 @@ export const ProjectCards = () => {
       title: 'SecureScan Pro', 
       imagePlaceholder: 'orb-blue', 
       category: 'Automated Web Application Vulnerability Scanner',
+      glowColor: 'blue',
       splineUrl: 'https://prod.spline.design/CVAJTOdIz-o93tKW/scene.splinecode',
       techStack: [
         { name: 'PYTHON', color: '#3776AB', pos: [-2, 0, 0] },
@@ -47,6 +48,7 @@ export const ProjectCards = () => {
       title: 'Narrative Flow', 
       imagePlaceholder: 'orb-purple', 
       category: 'AI- Co-writing Platform',
+      glowColor: 'purple',
       techStack: [
         { name: 'NODE', color: '#339933', pos: [-2, 0, 0] },
         { name: 'REDIS', color: '#DC382D', pos: [0, 0, 0] },
@@ -58,6 +60,7 @@ export const ProjectCards = () => {
       title: 'TribalBridge', 
       imagePlaceholder: 'orb-cyan', 
       category: 'IMMERSIVE',
+      glowColor: 'green',
       techStack: [
         { name: 'UNITY', color: '#ffffff', pos: [-2, 0, 0] },
         { name: 'THREE.JS', color: '#ffffff', pos: [0, 0, 0] },
@@ -147,7 +150,11 @@ export const ProjectCards = () => {
               whileHover={{ scale: 1.02, transition: { duration: 0.5, ease: "easeOut" } }}
             >
               {/* Behind-the-Box Backlight Glow */}
-              <div className="absolute inset-[-40px] bg-purple-600/20 blur-[120px] rounded-full z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-[2000ms] pointer-events-none" />
+              <div className={`absolute inset-[-40px] blur-[120px] rounded-full z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-[2000ms] pointer-events-none ${
+                project.glowColor === 'blue' ? 'bg-blue-600/20' : 
+                project.glowColor === 'green' ? 'bg-green-600/20' : 
+                'bg-purple-600/20'
+              }`} />
 
               {/* Animated Floating Background Glow */}
               <div className={`absolute top-1/2 left-1/2 w-[500px] h-[500px] bg-gradient-to-br ${

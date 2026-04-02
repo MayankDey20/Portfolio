@@ -11,6 +11,7 @@ const mockProjects = [
     id: 1,
     title: 'SecureScan Pro',
     category: 'Automated Web Application Vulnerability Scanner',
+    glowColor: 'blue',
     imagePlaceholder: 'orb-blue',
     splineUrl: 'https://prod.spline.design/CVAJTOdIz-o93tKW/scene.splinecode',
     description: 'A tactical operations interface visualizing complex data streams in 3D.',
@@ -24,6 +25,7 @@ const mockProjects = [
     id: 2,
     title: 'Narrative Flow',
     category: 'AI- Co-writing Platform',
+    glowColor: 'purple',
     imagePlaceholder: 'orb-purple',
     description: 'Next-generation neural network visualization platform',
     techStack: [
@@ -36,6 +38,7 @@ const mockProjects = [
     id: 3,
     title: 'TribalBridge',
     category: 'IMMERSIVE',
+    glowColor: 'green',
     imagePlaceholder: 'orb-cyan',
     description: 'Immersive space exploration experience',
     techStack: [
