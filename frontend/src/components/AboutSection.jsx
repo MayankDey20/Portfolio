@@ -53,9 +53,9 @@ export const AboutSection = () => {
   ]
 
   const pillars = [
-    { name: 'LOGIC', desc: 'Precision-engineered backend systems and scalable data flow.' },
-    { name: 'AESTHETIC', desc: 'High-fidelity visual experiences and immersive 3D interfaces.' },
-    { name: 'PERFORMANCE', desc: 'Optimized delivery and ultra-smooth interaction patterns.' }
+    { name: 'CYBERSECURITY', desc: 'Safeguarding digital frontiers with proactive threat intelligence and robust architectural defense.' },
+    { name: 'AI', desc: 'Engineering intelligent interfaces and LLM-driven systems that push the boundaries of automation.' },
+    { name: 'GAME DESIGN', desc: 'Crafting immersive 3D realities and interactive mechanics for next-generation digital experiences.' }
   ]
 
   return (
@@ -73,8 +73,9 @@ export const AboutSection = () => {
           >
             ENGINEERING <br/> DIGITAL <br/> REALITIES.
           </motion.h3>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+          <div className="flex flex-col gap-8 mt-24">
+            <h4 className="text-white/20 text-[10px] tracking-[0.5em] uppercase font-mono border-l-2 border-purple-500/30 pl-4">Interests</h4>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {pillars.map((pillar, index) => (
               <motion.div 
                 key={pillar.name}
@@ -89,6 +90,7 @@ export const AboutSection = () => {
                 <p className="text-white/40 text-xs leading-relaxed">{pillar.desc}</p>
               </motion.div>
             ))}
+            </div>
           </div>
         </div>
 
