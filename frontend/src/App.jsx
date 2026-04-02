@@ -7,9 +7,12 @@ import ProjectCards from './components/ProjectCards'
 import ContactSection from './components/ContactSection'
 import Footer from './components/Footer'
 
+import SmoothScroll from './components/SmoothScroll'
+
 function App() {
   return (
-    <div className="relative w-full min-h-screen bg-black font-sans selection:bg-purple-500/30">
+    <SmoothScroll>
+      <div className="relative w-full min-h-screen bg-black font-sans selection:bg-purple-500/30">
       {/* Atmospheric Glows */}
       <div className="glow-overlay w-[600px] h-[600px] bg-purple-600/10 top-[-10%] left-[-10%] fixed" />
       <div className="glow-overlay w-[500px] h-[500px] bg-blue-600/10 bottom-[-10%] right-[-10%] fixed" />
@@ -41,7 +44,8 @@ function App() {
         {/* Site Footer */}
         <Footer />
       </div>
-    </div>
+      </div>
+    </SmoothScroll>
   )
 }
 
