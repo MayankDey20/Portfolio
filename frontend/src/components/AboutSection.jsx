@@ -33,22 +33,22 @@ const TimelineItem = ({ date, title, company, description, isLast }) => (
 export const AboutSection = () => {
   const experiences = [
     {
-      date: '2024 — PRESENT',
-      title: 'AI RESEARCH INTERN',
-      company: 'ADVANCED AI LABS',
-      description: 'Developing and optimizing neural architectures for high-performance computer vision tasks. Focused on deep learning and model scaling.'
+      date: 'DEC 2025 — PRESENT',
+      title: 'AI INTERN',
+      company: 'INFOSYS SPRINGBOARD',
+      description: 'Designing LLM-based interactive storytelling systems using instruction-tuned models. Building modular React components to visualize LLM outputs, increasing interaction speed by 25%.'
     },
     {
-      date: '2022 — 2024',
-      title: 'TECHNICAL COORDINATOR',
-      company: 'UNIVERSITY TECH CLUB',
-      description: 'Leading a team of 15 student developers in building campus-wide digital solutions and organizing large-scale hackathons.'
+      date: 'JUNE 2025 — JULY 2025',
+      title: 'AI INTERN',
+      company: 'EDUNET FOUNDATION',
+      description: 'Developed an AI-powered image classification system (PyTorch/TensorFlow) reaching 92% accuracy. Optimized data pipelines with NumPy/Pandas, reducing training time by 56%.'
     },
     {
-      date: '2020 — 2022',
-      title: 'OPEN SOURCE CONTRIBUTOR',
-      company: 'GITHUB ECOSYSTEM',
-      description: 'Built and maintained several UI libraries and architectural frameworks. Focused on clean code and developer experience.'
+      date: 'JAN 2025 — APRIL 2025',
+      title: 'FULL STACK INTERN',
+      company: 'EDUNET FOUNDATION',
+      description: 'Engineering comprehensive full-stack solutions and integrating robust frontend architectures with scalable backend logic to deliver high-performance web applications.'
     }
   ]
 
