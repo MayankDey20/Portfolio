@@ -19,9 +19,15 @@ const mockProjects = [
     imagePlaceholder: 'orb-blue',
     imagePlaceholder: 'orb-blue',
     techStack: [
-      { name: 'PYTHON', color: '#3776AB', pos: [-2, 0, 0] },
-      { name: 'REACT', color: '#61DAFB', pos: [0, 0, 0] },
-      { name: 'THREE.JS', color: '#ffffff', pos: [2, 0, 0] }
+      { name: 'REACT', color: '#61DAFB' },
+      { name: 'FASTAPI', color: '#009688' },
+      { name: 'SUPABASE', color: '#3ECF8E' },
+      { name: 'POSTGRESQL', color: '#4169E1' },
+      { name: 'CELERY', color: '#37814A' },
+      { name: 'REDIS', color: '#DC382D' },
+      { name: 'WEBSOCKET', color: '#ffffff' },
+      { name: 'JWT', color: '#ffffff' },
+      { name: 'NUCLEI', color: '#ffffff' }
     ]
   },
   {
@@ -36,9 +42,10 @@ const mockProjects = [
     imagePlaceholder: 'orb-purple',
     imagePlaceholder: 'orb-purple',
     techStack: [
-      { name: 'NODE', color: '#339933', pos: [-2, 0, 0] },
-      { name: 'REDIS', color: '#DC382D', pos: [0, 0, 0] },
-      { name: 'AWS', color: '#FF9900', pos: [2, 0, 0] }
+      { name: 'NODE', color: '#339933' },
+      { name: 'REDIS', color: '#DC382D' },
+      { name: 'AWS', color: '#FF9900' },
+      { name: 'REACT', color: '#61DAFB' }
     ]
   },
   {
@@ -51,9 +58,9 @@ const mockProjects = [
     imagePlaceholder: 'orb-cyan',
     imagePlaceholder: 'orb-cyan',
     techStack: [
-      { name: 'UNITY', color: '#ffffff', pos: [-2, 0, 0] },
-      { name: 'THREE.JS', color: '#ffffff', pos: [0, 0, 0] },
-      { name: 'C#', color: '#178600', pos: [2, 0, 0] }
+      { name: 'UNITY', color: '#ffffff' },
+      { name: 'THREE.JS', color: '#ffffff' },
+      { name: 'C#', color: '#239120' }
     ]
   }
 ]

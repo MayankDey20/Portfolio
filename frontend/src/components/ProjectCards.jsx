@@ -43,9 +43,15 @@ export const ProjectCards = () => {
       description: 'SecureScan Pro is an advanced, distributed web vulnerability scanner and threat intelligence platform. It provides organizations and security professionals with a unified dashboard to proactively discover, analyze, and remediate security flaws across their web infrastructure.\n\nBy combining active vulnerability scanning with machine learning-powered threat intelligence and real-time reporting, SecureScan Pro offers a holistic view of an asset\'s security posture.',
       githubUrl: 'https://github.com/MayankDey20/SecureScanPro',
       techStack: [
-        { name: 'PYTHON', color: '#3776AB', pos: [-2, 0, 0] },
-        { name: 'REACT', color: '#61DAFB', pos: [0, 0, 0] },
-        { name: 'THREE.JS', color: '#ffffff', pos: [2, 0, 0] }
+        { name: 'REACT', color: '#61DAFB' },
+        { name: 'FASTAPI', color: '#009688' },
+        { name: 'SUPABASE', color: '#3ECF8E' },
+        { name: 'POSTGRESQL', color: '#4169E1' },
+        { name: 'CELERY', color: '#37814A' },
+        { name: 'REDIS', color: '#DC382D' },
+        { name: 'WEBSOCKET', color: '#ffffff' },
+        { name: 'JWT', color: '#ffffff' },
+        { name: 'NUCLEI', color: '#ffffff' }
       ]
     },
     { 
@@ -59,9 +65,10 @@ export const ProjectCards = () => {
       description: 'Narrative Flow is an AI-powered story co-writing platform that harmonizes human creativity with large language models. It offers a dynamic environment for novelists and screenwriters to brainstorm, structure, and refine complex narratives in real-time.',
       githubUrl: 'https://github.com/MayankDey20/NarrativeFlow',
       techStack: [
-        { name: 'NODE', color: '#339933', pos: [-2, 0, 0] },
-        { name: 'REDIS', color: '#DC382D', pos: [0, 0, 0] },
-        { name: 'AWS', color: '#FF9900', pos: [2, 0, 0] }
+        { name: 'NODE', color: '#339933' },
+        { name: 'REDIS', color: '#DC382D' },
+        { name: 'AWS', color: '#FF9900' },
+        { name: 'REACT', color: '#61DAFB' }
       ]
     },
     { 
@@ -73,9 +80,9 @@ export const ProjectCards = () => {
       description: 'TribalBridge is a cross-platform infrastructure layer designed to connect decentralized communities through high-fidelity immersive environments. It serves as a bridge between legacy social systems and the evolving spatial web.',
       githubUrl: 'https://github.com/MayankDey20/TribalBridge',
       techStack: [
-        { name: 'UNITY', color: '#ffffff', pos: [-2, 0, 0] },
-        { name: 'THREE.JS', color: '#ffffff', pos: [0, 0, 0] },
-        { name: 'C#', color: '#178600', pos: [2, 0, 0] }
+        { name: 'UNITY', color: '#ffffff' },
+        { name: 'THREE.JS', color: '#ffffff' },
+        { name: 'C#', color: '#239120' }
       ]
     }
   ])
@@ -293,19 +300,19 @@ export const ProjectCards = () => {
                       </button>
                     </div>
                   </div>
-
-                  {/* 3D Tech Signature - Resided UNDER the box */}
-                  <div className="w-full relative z-30 mt-12 pointer-events-auto" style={{ backfaceVisibility: 'hidden' }}>
-                    <div className={`text-[10px] tracking-[0.5em] font-mono mb-4 uppercase opacity-50 pl-4 border-l-2 ${
-                      project.glowColor === 'blue' ? 'text-blue-400 border-blue-500/30' : 
-                      project.glowColor === 'green' ? 'text-green-400 border-green-500/30' : 
-                      'text-purple-400 border-purple-500/30'
-                    }`}>
-                      Tech Architecture
-                    </div>
-                    <ProjectTechCubes techs={project.techStack} />
-                  </div>
                 </motion.div>
+
+                {/* 3D Tech Signature - Resided UNDER the box, decoupled from flip */}
+                <div className="w-full relative z-30 mt-12 pointer-events-auto">
+                  <div className={`text-[10px] tracking-[0.5em] font-mono mb-4 uppercase opacity-50 pl-4 border-l-2 ${
+                    project.glowColor === 'blue' ? 'text-blue-400 border-blue-500/30' : 
+                    project.glowColor === 'green' ? 'text-green-400 border-green-500/30' : 
+                    'text-purple-400 border-purple-500/30'
+                  }`}>
+                    Tech Architecture
+                  </div>
+                  <FloatingTechIcons techs={project.techStack} themeColor={project.glowColor} />
+                </div>
               </div>
             );
           })}
