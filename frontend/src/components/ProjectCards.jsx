@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import axios from 'axios'
+import ContactSection from './ContactSection'
+import Footer from './Footer'
+import { FloatingTechIcons } from './FloatingTechIcons'
 import ProjectTechCubes from './ProjectTechCubes'
 
 const OrbVisual = ({ type }) => {
