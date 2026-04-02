@@ -34,7 +34,7 @@ export const ProjectCards = () => {
       id: 1, 
       title: 'SecureScan Pro', 
       imagePlaceholder: 'orb-blue', 
-      category: 'INTERFACE',
+      category: 'Automated Web Application Vulnerability Scanner',
       splineUrl: 'https://prod.spline.design/CVAJTOdIz-o93tKW/scene.splinecode',
       techStack: [
         { name: 'PYTHON', color: '#3776AB', pos: [-2, 0, 0] },
@@ -46,7 +46,7 @@ export const ProjectCards = () => {
       id: 2, 
       title: 'Narrative Flow', 
       imagePlaceholder: 'orb-purple', 
-      category: 'VISUALIZATION',
+      category: 'AI- Co-writing Platform',
       techStack: [
         { name: 'NODE', color: '#339933', pos: [-2, 0, 0] },
         { name: 'REDIS', color: '#DC382D', pos: [0, 0, 0] },

@@ -10,7 +10,7 @@ const mockProjects = [
   {
     id: 1,
     title: 'SecureScan Pro',
-    category: 'INTERFACE',
+    category: 'Automated Web Application Vulnerability Scanner',
     imagePlaceholder: 'orb-blue',
     splineUrl: 'https://prod.spline.design/CVAJTOdIz-o93tKW/scene.splinecode',
     description: 'A tactical operations interface visualizing complex data streams in 3D.',
@@ -23,7 +23,7 @@ const mockProjects = [
   {
     id: 2,
     title: 'Narrative Flow',
-    category: 'VISUALIZATION',
+    category: 'AI- Co-writing Platform',
     imagePlaceholder: 'orb-purple',
     description: 'Next-generation neural network visualization platform',
     techStack: [
