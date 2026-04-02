@@ -11,7 +11,7 @@ const techIcons = {
   'REDIS': 'https://cdn.simpleicons.org/redis/DC382D',
   'WEBSOCKET': 'https://cdn.simpleicons.org/socketdotio/ffffff',
   'JWT': 'https://cdn.simpleicons.org/jsonwebtokens/ffffff',
-  'NUCLEI': 'https://cdn.simpleicons.org/cisco/ffffff', // Using Cisco icon generic for security or Nuclei if found
+  'NUCLEI': 'https://avatars.githubusercontent.com/u/50972139?s=200&v=4', // ProjectDiscovery Official Logo
   'NODE': 'https://cdn.simpleicons.org/nodedotjs/339933',
   'AWS': 'https://cdn.simpleicons.org/amazonaws/FF9900',
   'POSTGRESQL': 'https://cdn.simpleicons.org/postgresql/4169E1',
