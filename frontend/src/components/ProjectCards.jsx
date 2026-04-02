@@ -87,7 +87,9 @@ export const ProjectCards = () => {
       try {
         setLoading(true)
         const response = await axios.get('/api/projects', { signal: controller.signal })
-        setProjects(response.data)
+        if (response.data && response.data.length > 0) {
+          setProjects(response.data)
+        }
       } catch (error) {
         console.error('Error fetching projects:', error)
       } finally {
@@ -128,10 +130,6 @@ export const ProjectCards = () => {
 
     return () => clearInterval(checkShadowRoot);
   }, []);
-
-  if (loading) {
-    return <div className="h-64 flex items-center justify-center text-white/20 font-mono tracking-widest uppercase text-xs">Initializing...</div>
-  }
 
   return (
     <motion.section
