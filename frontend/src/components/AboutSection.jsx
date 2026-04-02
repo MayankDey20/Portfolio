@@ -63,7 +63,7 @@ export const AboutSection = () => {
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-24">
         {/* Narrative Side */}
         <div className="flex-1 flex flex-col">
-          <h2 className="text-white/20 text-[10px] tracking-[0.6em] uppercase font-mono mb-8">Narrative / Student / Intern</h2>
+          <h2 className="text-white/20 text-[10px] tracking-[0.6em] uppercase font-mono mb-8">Student / Intern</h2>
           <motion.h3 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
