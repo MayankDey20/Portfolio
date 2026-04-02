@@ -183,27 +183,47 @@ export const ProjectCards = () => {
                 
                 {/* Card Content Overlay */}
                 <div className="relative z-10 p-12 flex flex-col justify-end bg-gradient-to-t from-black/95 via-black/40 to-transparent flex-grow">
-                  <span className="text-white/40 text-[10px] tracking-[0.6em] font-mono mb-3 uppercase">
+                  <span className={`text-[10px] tracking-[0.6em] font-mono mb-3 uppercase ${
+                    project.glowColor === 'blue' ? 'text-blue-400/60' : 
+                    project.glowColor === 'green' ? 'text-green-400/60' : 
+                    'text-purple-400/60'
+                  }`}>
                     {project.category || 'PROJECT'}
                   </span>
-                  <h3 className="text-white text-3xl md:text-4xl font-bold tracking-tighter mb-6 group-hover:text-purple-400 transition-colors duration-500">
+                  <h3 className={`text-white text-3xl md:text-4xl font-bold tracking-tighter mb-6 transition-colors duration-500 ${
+                    project.glowColor === 'blue' ? 'group-hover:text-blue-400' : 
+                    project.glowColor === 'green' ? 'group-hover:text-green-400' : 
+                    'group-hover:text-purple-400'
+                  }`}>
                     {project.title}
                   </h3>
                   
                   <div className="mb-4">
-                    <button className="text-white/60 text-xs tracking-[0.4em] uppercase font-bold hover:text-white transition-colors">
+                    <button className={`text-xs tracking-[0.4em] uppercase font-bold transition-all duration-300 hover:tracking-[0.5em] ${
+                      project.glowColor === 'blue' ? 'text-blue-400/80 hover:text-blue-300' : 
+                      project.glowColor === 'green' ? 'text-green-400/80 hover:text-green-300' : 
+                      'text-purple-400/80 hover:text-purple-300'
+                    }`}>
                       Explore Concept →
                     </button>
                   </div>
                 </div>
 
-                {/* Hover Border Glow */}
-                <div className="absolute inset-x-0 bottom-0 h-[2px] bg-gradient-to-r from-transparent via-purple-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 shadow-[0_0_25px_rgba(168,85,247,0.8)]" />
+                {/* Card Outer Border Shine */}
+                <div className={`absolute inset-0 border transition-colors duration-1000 ${
+                  project.glowColor === 'blue' ? 'border-blue-500/10 group-hover:border-blue-500/30' : 
+                  project.glowColor === 'green' ? 'border-green-500/10 group-hover:border-green-500/30' : 
+                  'border-purple-500/10 group-hover:border-purple-500/30'
+                }`} />
               </div>
 
               {/* 3D Tech Signature - Resided UNDER the box */}
               <div className="w-full relative z-30 mt-12 pointer-events-auto">
-                <div className="text-[10px] tracking-[0.5em] font-mono text-purple-400 mb-4 uppercase opacity-50 pl-4 border-l-2 border-purple-500/30">
+                <div className={`text-[10px] tracking-[0.5em] font-mono mb-4 uppercase opacity-50 pl-4 border-l-2 ${
+                  project.glowColor === 'blue' ? 'text-blue-400 border-blue-500/30' : 
+                  project.glowColor === 'green' ? 'text-green-400 border-green-500/30' : 
+                  'text-purple-400 border-purple-500/30'
+                }`}>
                   Tech Architecture
                 </div>
                 <ProjectTechCubes techs={project.techStack} />
