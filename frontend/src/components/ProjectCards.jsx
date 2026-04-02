@@ -34,13 +34,17 @@ export const ProjectCards = () => {
 
   useEffect(() => {
     const fetchProjects = async () => {
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 10000); // 10s timeout
+      
       try {
         setLoading(true)
-        const response = await axios.get('/api/projects')
+        const response = await axios.get('/api/projects', { signal: controller.signal })
         setProjects(response.data)
       } catch (error) {
         console.error('Error fetching projects:', error)
       } finally {
+        clearTimeout(timeoutId);
         setLoading(false)
       }
     }
