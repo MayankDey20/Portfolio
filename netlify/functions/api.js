@@ -26,6 +26,7 @@ const mockProjects = [
     title: 'Narrative Flow',
     category: 'AI- Co-writing Platform',
     glowColor: 'purple',
+    splineUrl: 'https://prod.spline.design/QPKs0kpS2CvawGmE/scene.splinecode',
     imagePlaceholder: 'orb-purple',
     description: 'Next-generation neural network visualization platform',
     techStack: [

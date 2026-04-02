@@ -49,6 +49,7 @@ export const ProjectCards = () => {
       imagePlaceholder: 'orb-purple', 
       category: 'AI- Co-writing Platform',
       glowColor: 'purple',
+      splineUrl: 'https://prod.spline.design/QPKs0kpS2CvawGmE/scene.splinecode',
       techStack: [
         { name: 'NODE', color: '#339933', pos: [-2, 0, 0] },
         { name: 'REDIS', color: '#DC382D', pos: [0, 0, 0] },
