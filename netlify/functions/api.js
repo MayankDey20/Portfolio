@@ -9,7 +9,7 @@ app.use(express.json())
 const mockProjects = [
   {
     id: 1,
-    title: 'CyberOps',
+    title: 'SecureScan Pro',
     category: 'INTERFACE',
     imagePlaceholder: 'orb-blue',
     splineUrl: 'https://prod.spline.design/CVAJTOdIz-o93tKW/scene.splinecode',
@@ -22,7 +22,7 @@ const mockProjects = [
   },
   {
     id: 2,
-    title: 'Neural Interface',
+    title: 'Narrative Flow',
     category: 'VISUALIZATION',
     imagePlaceholder: 'orb-purple',
     description: 'Next-generation neural network visualization platform',
@@ -34,7 +34,7 @@ const mockProjects = [
   },
   {
     id: 3,
-    title: 'Void Explorer',
+    title: 'TribalBridge',
     category: 'IMMERSIVE',
     imagePlaceholder: 'orb-cyan',
     description: 'Immersive space exploration experience',

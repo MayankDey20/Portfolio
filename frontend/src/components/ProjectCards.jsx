@@ -32,7 +32,7 @@ export const ProjectCards = () => {
   const [projects, setProjects] = useState([
     { 
       id: 1, 
-      title: 'CYBER OPS', 
+      title: 'SecureScan Pro', 
       imagePlaceholder: 'orb-blue', 
       category: 'INTERFACE',
       splineUrl: 'https://prod.spline.design/CVAJTOdIz-o93tKW/scene.splinecode',
@@ -44,7 +44,7 @@ export const ProjectCards = () => {
     },
     { 
       id: 2, 
-      title: 'NEURAL INTERFACE', 
+      title: 'Narrative Flow', 
       imagePlaceholder: 'orb-purple', 
       category: 'VISUALIZATION',
       techStack: [
@@ -55,7 +55,7 @@ export const ProjectCards = () => {
     },
     { 
       id: 3, 
-      title: 'VOID EXPLORER', 
+      title: 'TribalBridge', 
       imagePlaceholder: 'orb-cyan', 
       category: 'IMMERSIVE',
       techStack: [
