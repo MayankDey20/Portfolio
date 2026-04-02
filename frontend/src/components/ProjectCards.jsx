@@ -163,7 +163,7 @@ export const ProjectCards = () => {
             return (
               <div key={project.id} className={`w-full md:w-[600px] ${index % 2 === 0 ? 'self-start' : 'self-end'}`}>
                 <motion.div
-                  className="group relative w-full flex flex-col min-h-[600px] cursor-pointer"
+                  className="group relative w-full flex flex-col min-h-[400px] cursor-pointer"
                   variants={cardVariants}
                   animate={isFlipped ? { rotateY: 180 } : { rotateY: 0 }}
                   transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
