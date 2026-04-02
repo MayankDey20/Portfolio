@@ -167,7 +167,10 @@ export const ProjectCards = () => {
                   }`} />
 
                   {/* FRONT SIDE */}
-                  <div className="absolute inset-0 w-full h-[400px]" style={{ backfaceVisibility: 'hidden' }}>
+                  <div 
+                    className={`absolute inset-0 w-full h-[400px] transition-all duration-100 ${isFlipped ? 'pointer-events-none opacity-0' : 'pointer-events-auto opacity-100'}`} 
+                    style={{ backfaceVisibility: 'hidden', zIndex: isFlipped ? 0 : 20 }}
+                  >
                     <div className="glass-panel relative z-10 w-full h-full overflow-hidden flex flex-col rounded-2xl border border-white/5 shadow-2xl">
                       <div className="absolute inset-0 z-0 opacity-100 transition-opacity duration-1000">
                         {project.splineUrl ? (
@@ -256,7 +259,10 @@ export const ProjectCards = () => {
                   </div>
 
                   {/* BACK SIDE (Briefcase) */}
-                  <div className="absolute inset-0 w-full h-[400px]" style={{ backfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}>
+                  <div 
+                    className={`absolute inset-0 w-full h-[400px] transition-all duration-100 ${isFlipped ? 'pointer-events-auto opacity-100' : 'pointer-events-none opacity-0'}`} 
+                    style={{ backfaceVisibility: 'hidden', transform: 'rotateY(180deg)', zIndex: isFlipped ? 20 : 0 }}
+                  >
                     <div className={`glass-panel relative z-10 w-full h-full p-12 flex flex-col rounded-2xl border bg-black/40 backdrop-blur-3xl shadow-2xl ${
                       project.glowColor === 'blue' ? 'border-blue-500/30' : 
                       project.glowColor === 'green' ? 'border-green-500/30' : 
