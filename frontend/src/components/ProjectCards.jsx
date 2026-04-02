@@ -306,7 +306,7 @@ export const ProjectCards = () => {
                 </motion.div>
 
                 {/* 3D Tech Signature - Resided UNDER the box, decoupled from flip */}
-                <div className="w-full relative z-30 mt-12 pointer-events-auto">
+                <div className="w-full relative z-30 mt-4 pointer-events-auto">
                   <div className={`text-[10px] tracking-[0.5em] font-mono mb-4 uppercase opacity-50 pl-4 border-l-2 ${
                     project.glowColor === 'blue' ? 'text-blue-400 border-blue-500/30' : 
                     project.glowColor === 'green' ? 'text-green-400 border-green-500/30' : 
