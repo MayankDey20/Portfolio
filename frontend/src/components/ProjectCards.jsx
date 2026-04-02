@@ -29,8 +29,43 @@ const OrbVisual = ({ type }) => {
 }
 
 export const ProjectCards = () => {
-  const [projects, setProjects] = useState([])
-  const [loading, setLoading] = useState(true)
+  const [projects, setProjects] = useState([
+    { 
+      id: 1, 
+      title: 'CYBER OPS', 
+      imagePlaceholder: 'orb-blue', 
+      category: 'INTERFACE',
+      splineUrl: 'https://prod.spline.design/CVAJTOdIz-o93tKW/scene.splinecode',
+      techStack: [
+        { name: 'PYTHON', color: '#3776AB', pos: [-2, 0, 0] },
+        { name: 'REACT', color: '#61DAFB', pos: [0, 0, 0] },
+        { name: 'THREE.JS', color: '#ffffff', pos: [2, 0, 0] }
+      ]
+    },
+    { 
+      id: 2, 
+      title: 'NEURAL INTERFACE', 
+      imagePlaceholder: 'orb-purple', 
+      category: 'VISUALIZATION',
+      techStack: [
+        { name: 'NODE', color: '#339933', pos: [-2, 0, 0] },
+        { name: 'REDIS', color: '#DC382D', pos: [0, 0, 0] },
+        { name: 'AWS', color: '#FF9900', pos: [2, 0, 0] }
+      ]
+    },
+    { 
+      id: 3, 
+      title: 'VOID EXPLORER', 
+      imagePlaceholder: 'orb-cyan', 
+      category: 'IMMERSIVE',
+      techStack: [
+        { name: 'UNITY', color: '#ffffff', pos: [-2, 0, 0] },
+        { name: 'THREE.JS', color: '#ffffff', pos: [0, 0, 0] },
+        { name: 'C#', color: '#178600', pos: [2, 0, 0] }
+      ]
+    }
+  ])
+  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
     const fetchProjects = async () => {
