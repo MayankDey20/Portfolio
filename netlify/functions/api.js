@@ -14,6 +14,7 @@ const mockProjects = [
     glowColor: 'blue',
     imagePlaceholder: 'orb-blue',
     splineUrl: 'https://prod.spline.design/CVAJTOdIz-o93tKW/scene.splinecode',
+    splineConfig: { scale: 0.45, x: -32, y: -18 },
     description: 'A tactical operations interface visualizing complex data streams in 3D.',
     techStack: [
       { name: 'PYTHON', color: '#3776AB', pos: [-2, 0, 0] },
@@ -27,6 +28,7 @@ const mockProjects = [
     category: 'AI- Co-writing Platform',
     glowColor: 'purple',
     splineUrl: 'https://prod.spline.design/QPKs0kpS2CvawGmE/scene.splinecode',
+    splineConfig: { scale: 0.45, x: -5, y: -10 },
     imagePlaceholder: 'orb-purple',
     description: 'Next-generation neural network visualization platform',
     techStack: [

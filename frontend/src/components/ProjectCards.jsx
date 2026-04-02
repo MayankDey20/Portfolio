@@ -37,6 +37,7 @@ export const ProjectCards = () => {
       category: 'Automated Web Application Vulnerability Scanner',
       glowColor: 'blue',
       splineUrl: 'https://prod.spline.design/CVAJTOdIz-o93tKW/scene.splinecode',
+      splineConfig: { scale: 0.45, x: -32, y: -18 },
       techStack: [
         { name: 'PYTHON', color: '#3776AB', pos: [-2, 0, 0] },
         { name: 'REACT', color: '#61DAFB', pos: [0, 0, 0] },
@@ -50,6 +51,7 @@ export const ProjectCards = () => {
       category: 'AI- Co-writing Platform',
       glowColor: 'purple',
       splineUrl: 'https://prod.spline.design/QPKs0kpS2CvawGmE/scene.splinecode',
+      splineConfig: { scale: 0.45, x: -5, y: -10 },
       techStack: [
         { name: 'NODE', color: '#339933', pos: [-2, 0, 0] },
         { name: 'REDIS', color: '#DC382D', pos: [0, 0, 0] },
@@ -166,7 +168,12 @@ export const ProjectCards = () => {
               <div className="glass-panel relative z-10 w-full h-[400px] overflow-hidden flex flex-col rounded-2xl border border-white/5 shadow-2xl">
                 <div className="absolute inset-0 z-0 opacity-100 transition-opacity duration-1000">
                   {project.splineUrl ? (
-                    <div className="absolute inset-0 w-full h-full transform scale-[0.45] -translate-x-[32%] -translate-y-[18%] group-hover:scale-[0.48] transition-transform duration-[2000ms] ease-out pointer-events-none flex items-center justify-center">
+                    <div 
+                      className="absolute inset-0 w-full h-full transform group-hover:scale-[0.48] transition-transform duration-[2000ms] ease-out pointer-events-none flex items-center justify-center"
+                      style={{ 
+                        transform: `scale(${project.splineConfig?.scale || 0.45}) translate(${project.splineConfig?.x || 0}%, ${project.splineConfig?.y || 0}%)` 
+                      }}
+                    >
                       <spline-viewer 
                         url={project.splineUrl} 
                         events-target="global" 
