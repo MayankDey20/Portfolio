@@ -9,7 +9,7 @@ export const ContactSection = () => {
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-32 items-center">
         {/* Contact Narrative */}
         <div className="flex-1">
-          <h2 className="text-white/20 text-[10px] tracking-[0.6em] uppercase font-mono mb-8">Interaction / Gateway</h2>
+          <h2 className="text-white/80 text-[10px] tracking-[0.6em] uppercase font-mono font-bold mb-8">Interaction / Gateway</h2>
           <h3 className="metallic-text text-5xl md:text-8xl font-bold tracking-tighter mb-12 leading-[0.9]">
             INITIATE <br/> CONNECTION.
           </h3>
@@ -57,7 +57,7 @@ export const ContactSection = () => {
             {/* Input Overlay Glow effect on Focus */}
             <div className="flex flex-col gap-10">
               <div className="group">
-                <label className="text-white/40 text-[10px] tracking-[0.6em] uppercase font-mono mb-3 block">Full Name</label>
+                <label className="text-white/70 text-[10px] tracking-[0.6em] uppercase font-mono font-bold mb-3 block">Full Name</label>
                 <input 
                   type="text" 
                   className="w-full bg-white/5 border border-white/10 rounded-lg p-5 text-white placeholder-white/30 focus:outline-none focus:border-purple-500/50 transition-all duration-300 font-mono text-sm"
@@ -66,7 +66,7 @@ export const ContactSection = () => {
               </div>
               
               <div className="group">
-                <label className="text-white/40 text-[10px] tracking-[0.6em] uppercase font-mono mb-3 block">Communication Channel</label>
+                <label className="text-white/70 text-[10px] tracking-[0.6em] uppercase font-mono font-bold mb-3 block">Communication Channel</label>
                 <input 
                   type="email" 
                   className="w-full bg-white/5 border border-white/10 rounded-lg p-5 text-white placeholder-white/30 focus:outline-none focus:border-blue-500/50 transition-all duration-300 font-mono text-sm"
@@ -75,7 +75,7 @@ export const ContactSection = () => {
               </div>
               
               <div className="group">
-                <label className="text-white/40 text-[10px] tracking-[0.6em] uppercase font-mono mb-3 block">Transmission Message</label>
+                <label className="text-white/70 text-[10px] tracking-[0.6em] uppercase font-mono font-bold mb-3 block">Transmission Message</label>
                 <textarea 
                   className="w-full bg-white/5 border border-white/10 rounded-lg p-5 text-white placeholder-white/10 focus:outline-none focus:border-cyan-500/50 transition-all duration-300 font-mono text-sm h-48 resize-none"
                   placeholder="ENTER_DATA_HERE..."

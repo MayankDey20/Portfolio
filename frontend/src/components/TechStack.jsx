@@ -80,7 +80,7 @@ export const TechStack = () => {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-12 pointer-events-none h-full flex flex-col justify-center">
-        <h2 className="text-white/20 text-[10px] tracking-[0.6em] uppercase font-mono mb-8">Expertise DNA</h2>
+        <h2 className="text-white/80 text-[10px] tracking-[0.6em] uppercase font-mono font-bold mb-8">Expertise DNA</h2>
         <div className="w-12 h-px bg-white/10 mb-12" />
         <div className="max-w-md">
           <h3 className="metallic-text text-4xl md:text-6xl font-bold tracking-tighter mb-6 leading-none">

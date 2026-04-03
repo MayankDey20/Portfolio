@@ -152,7 +152,7 @@ export const ProjectCards = () => {
     >
       <div className="max-w-7xl mx-auto flex flex-col gap-32">
         <div className="mb-16">
-          <h2 className="text-white/20 text-[10px] tracking-[0.6em] uppercase font-mono mb-4">Selected Works</h2>
+          <h2 className="text-white/80 text-[10px] tracking-[0.6em] uppercase font-mono font-bold mb-4">Selected Works</h2>
           <div className="w-12 h-px bg-white/10" />
         </div>
 
@@ -207,10 +207,10 @@ export const ProjectCards = () => {
                       
                       {/* Card Content Overlay */}
                       <div className="relative z-10 p-12 flex flex-col justify-end bg-gradient-to-t from-black/95 via-black/40 to-transparent flex-grow">
-                        <span className={`text-[10px] tracking-[0.6em] font-mono mb-3 uppercase ${
-                          project.glowColor === 'blue' ? 'text-blue-400/60' : 
-                          project.glowColor === 'green' ? 'text-green-400/60' : 
-                          'text-purple-400/60'
+                        <span className={`text-[10px] tracking-[0.6em] font-mono mb-3 uppercase font-bold ${
+                          project.glowColor === 'blue' ? 'text-blue-400/90' : 
+                          project.glowColor === 'green' ? 'text-green-400/90' : 
+                          'text-purple-400/90'
                         }`}>
                           {project.category || 'PROJECT'}
                         </span>
@@ -307,7 +307,7 @@ export const ProjectCards = () => {
 
                 {/* 3D Tech Signature - Resided UNDER the box, decoupled from flip */}
                 <div className="w-full relative z-30 mt-4 pointer-events-auto">
-                  <div className={`text-[10px] tracking-[0.5em] font-mono mb-4 uppercase opacity-50 pl-4 border-l-2 ${
+                  <div className={`text-[10px] tracking-[0.5em] font-mono mb-4 uppercase font-bold opacity-80 pl-4 border-l-2 ${
                     project.glowColor === 'blue' ? 'text-blue-400 border-blue-500/30' : 
                     project.glowColor === 'green' ? 'text-green-400 border-green-500/30' : 
                     'text-purple-400 border-purple-500/30'

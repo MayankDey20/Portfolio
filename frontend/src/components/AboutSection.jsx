@@ -63,7 +63,7 @@ export const AboutSection = () => {
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-24">
         {/* Narrative Side */}
         <div className="flex-1 flex flex-col">
-          <h2 className="text-white/20 text-[10px] tracking-[0.6em] uppercase font-mono mb-8">Student / Intern</h2>
+          <h2 className="text-white/80 text-[10px] tracking-[0.6em] uppercase font-mono font-bold mb-8">Student / Intern</h2>
           <motion.h3 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -74,7 +74,7 @@ export const AboutSection = () => {
             ENGINEERING <br/> DIGITAL <br/> REALITIES.
           </motion.h3>
           <div className="flex flex-col gap-8 mt-24">
-            <h4 className="text-white/20 text-[10px] tracking-[0.5em] uppercase font-mono border-l-2 border-purple-500/30 pl-4">Interests</h4>
+            <h4 className="text-white/80 text-[10px] tracking-[0.5em] uppercase font-mono font-bold border-l-2 border-purple-500/30 pl-4">Interests</h4>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {pillars.map((pillar, index) => (
               <motion.div 
@@ -96,7 +96,7 @@ export const AboutSection = () => {
 
         {/* Experience Side */}
         <div className="md:w-[400px] flex flex-col">
-          <h2 className="text-white/20 text-[10px] tracking-[0.6em] uppercase font-mono mb-16">Career Timeline</h2>
+          <h2 className="text-white/80 text-[10px] tracking-[0.6em] uppercase font-mono font-bold mb-16">Career Timeline</h2>
           <div className="flex flex-col">
             {experiences.map((exp, index) => (
               <TimelineItem 
