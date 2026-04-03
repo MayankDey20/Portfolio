@@ -41,6 +41,7 @@ const MiniCube = ({ name, color, position }) => {
           position={[0, 0, 0.41]}
           fontSize={0.14}
           color="white"
+          font="https://fonts.gstatic.com/s/outfit/v11/QGYsz_OzzM_Qpx47mHmNw777.woff"
           anchorX="center"
           anchorY="middle"
         >
