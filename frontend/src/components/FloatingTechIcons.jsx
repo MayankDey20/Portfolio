@@ -19,6 +19,7 @@ const techIcons = {
   'C#': 'https://cdn.simpleicons.org/csharp/239120',
   'DOCKER': 'https://cdn.simpleicons.org/docker/2496ED',
   'TYPESCRIPT': 'https://cdn.simpleicons.org/typescript/3178C6',
+  'JAVASCRIPT': 'https://cdn.simpleicons.org/javascript/F7DF1E',
   'NEXT.JS': 'https://cdn.simpleicons.org/nextdotjs/ffffff',
   'CHROMADB': 'https://cdn.simpleicons.org/googlecloud/ffffff', // Fallback to a cloud-like icon if chroma isn't on simpleicons yet
   'OLLAMA': 'https://cdn.simpleicons.org/ollama/ffffff',

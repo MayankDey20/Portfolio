@@ -54,7 +54,8 @@ export const ProjectCards = () => {
         { name: 'REDIS', color: '#DC382D' },
         { name: 'WEBSOCKET', color: '#ffffff' },
         { name: 'JWT', color: '#ffffff' },
-        { name: 'DOCKER', color: '#2496ED' }
+        { name: 'DOCKER', color: '#2496ED' },
+        { name: 'JAVASCRIPT', color: '#F7DF1E' }
       ]
     },
       { 
@@ -65,7 +66,7 @@ export const ProjectCards = () => {
         glowColor: 'purple',
         splineUrl: 'https://prod.spline.design/QPKs0kpS2CvawGmE/scene.splinecode',
         splineConfig: { scale: 0.45, x: -5, y: -10 },
-        description: 'Built NarrativeFlow, a full-stack AI co-writing platform using FastAPI, Next.js 14, PostgreSQL, ChromaDB, and Ollama, implementing a RAG memory pipeline with 768-dimensional vector embeddings, 1000-character chunks with 200-character overlap, and top-5 semantic retrieval via cosine similarity, enabling context-aware story generation across 100,000+ word narratives without any model fine-tuning. Engineered a 3-layer architecture to support 16 features, including 5-way parallel story branching, SD-Turbo image generation across 14 styles, and local Kokoro-82M ONNX TTS, while managing per-feature token budgets across 6+ AI tools and a 7-format TipTap export pipeline.',
+        description: 'Built NarrativeFlow, a full-stack AI co-writing platform using FastAPI, Next.js 14, PostgreSQL, ChromaDB, and Ollama, implementing a RAG memory pipeline with 768-dimensional vector embeddings, 1000-character chunks with 200-character overlap, and top-5 semantic retrieval via cosine similarity, enabling context-aware story generation across 100,000+ word narratives without any model fine-tuning. Engineered a 3-layer architecture to support 16 features, including 5-way parallel story branching, SD-Turbo image generation across 14 styles, and local Kokoro-82M ONNX TTS, while managing per-feature token budgets across 6+ AI tools and a 7-format TipTap export pipeline with 18 technical markdown files.',
         githubUrl: 'https://github.com/MayankDey20/NarrativeAI',
         techStack: [
           { name: 'PYTHON', color: '#3776AB' },
@@ -89,9 +90,10 @@ export const ProjectCards = () => {
         description: 'TribalBridge is a cross-platform infrastructure layer designed to connect decentralized communities through high-fidelity immersive environments. It serves as a bridge between legacy social systems and the evolving spatial web.',
         githubUrl: 'https://github.com/MayankDey20/TribalBridge',
         techStack: [
-          { name: 'UNITY', color: '#ffffff' },
-          { name: 'THREE.JS', color: '#ffffff' },
-          { name: 'C#', color: '#239120' }
+          { name: 'TYPESCRIPT', color: '#3178C6' },
+          { name: 'SUPABASE', color: '#3ECF8E' },
+          { name: 'POSTGRESQL', color: '#4169E1' },
+          { name: 'JAVASCRIPT', color: '#F7DF1E' }
         ]
       }
   ])
