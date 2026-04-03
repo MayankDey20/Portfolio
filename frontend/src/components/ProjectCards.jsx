@@ -54,7 +54,7 @@ export const ProjectCards = () => {
         { name: 'REDIS', color: '#DC382D' },
         { name: 'WEBSOCKET', color: '#ffffff' },
         { name: 'JWT', color: '#ffffff' },
-        { name: 'NUCLEI', color: '#ffffff' }
+        { name: 'DOCKER', color: '#2496ED' }
       ]
     },
       { 
@@ -68,12 +68,13 @@ export const ProjectCards = () => {
         description: 'Built NarrativeFlow, a full-stack AI co-writing platform using FastAPI, Next.js 14, PostgreSQL, ChromaDB, and Ollama, implementing a RAG memory pipeline with 768-dimensional vector embeddings, 1000-character chunks with 200-character overlap, and top-5 semantic retrieval via cosine similarity, enabling context-aware story generation across 100,000+ word narratives without any model fine-tuning. Engineered a 3-layer architecture to support 16 features, including 5-way parallel story branching, SD-Turbo image generation across 14 styles, and local Kokoro-82M ONNX TTS, while managing per-feature token budgets across 6+ AI tools and a 7-format TipTap export pipeline.',
         githubUrl: 'https://github.com/MayankDey20/NarrativeAI',
         techStack: [
+          { name: 'PYTHON', color: '#3776AB' },
           { name: 'FASTAPI', color: '#009688' },
           { name: 'NEXT.JS', color: '#ffffff' },
+          { name: 'TYPESCRIPT', color: '#3178C6' },
           { name: 'POSTGRESQL', color: '#4169E1' },
           { name: 'CHROMADB', color: '#FF6B6B' },
           { name: 'OLLAMA', color: '#ffffff' },
-          { name: 'RAG', color: '#FFD700' },
           { name: 'SD-TURBO', color: '#9B59B6' },
           { name: 'ONNX', color: '#00599C' },
           { name: 'TIPTAP', color: '#00C4B4' }
