@@ -2,6 +2,7 @@ import React, { useRef } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { Icosahedron, OrbitControls } from '@react-three/drei'
 import { EffectComposer, Bloom } from '@react-three/postprocessing'
+import useMobile from '../hooks/useMobile'
 
 const IcosahedronMesh = () => {
   const meshRef = useRef(null)
@@ -29,7 +30,7 @@ const IcosahedronMesh = () => {
   )
 }
 
-const Scene = () => {
+const Scene = ({ isMobile }) => {
   return (
     <>
       <ambientLight intensity={0.2} />
@@ -46,23 +47,30 @@ const Scene = () => {
         autoRotateSpeed={0.5}
       />
       
-      <EffectComposer>
-        <Bloom
-          intensity={2.8}
-          luminanceThreshold={0.1}
-          luminanceSmoothing={0.9}
-          radius={0.7}
-        />
-      </EffectComposer>
+      {!isMobile && (
+        <EffectComposer>
+          <Bloom
+            intensity={2.8}
+            luminanceThreshold={0.1}
+            luminanceSmoothing={0.9}
+            radius={0.7}
+          />
+        </EffectComposer>
+      )}
     </>
   )
 }
 
 export const Wireframe3DSphere = () => {
+  const isMobile = useMobile()
+  
   return (
     <div className="w-full h-[500px] md:h-[600px]">
-      <Canvas camera={{ position: [0, 0, 8], fov: 75 }}>
-        <Scene />
+      <Canvas 
+        camera={{ position: [0, 0, 8], fov: 75 }}
+        dpr={[1, 1.5]}
+      >
+        <Scene isMobile={isMobile} />
       </Canvas>
     </div>
   )

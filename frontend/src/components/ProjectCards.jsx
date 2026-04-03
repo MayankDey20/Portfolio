@@ -5,6 +5,7 @@ import ContactSection from './ContactSection'
 import Footer from './Footer'
 import { FloatingTechIcons } from './FloatingTechIcons'
 import ProjectTechCubes from './ProjectTechCubes'
+import useMobile from '../hooks/useMobile'
 
 const OrbVisual = ({ type }) => {
   const orbColors = {
@@ -24,7 +25,7 @@ const OrbVisual = ({ type }) => {
       <div className={`w-36 h-36 rounded-full bg-gradient-to-br ${orbColors[type] || orbColors['orb-blue']} opacity-60 blur-2xl animate-pulse`} />
       <div className={`absolute w-28 h-28 rounded-full bg-gradient-to-br ${orbColors[type] || orbColors['orb-blue']} border border-white/5`} 
            style={{
-             boxShadow: `0 0 40px ${glowColors[type] || glowColors['orb-blue']}, inset 0 0 20px rgba(255, 255, 255, 0.1)`
+             boxShadow: `0 0-40px ${glowColors[type] || glowColors['orb-blue']}, inset 0 0 20px rgba(255, 255, 255, 0.1)`
            }} />
       <div className="absolute w-28 h-28 rounded-full border border-white/10 opacity-20" />
     </div>
@@ -34,6 +35,7 @@ const OrbVisual = ({ type }) => {
 export const ProjectCards = () => {
   const [loading, setLoading] = useState(true)
   const [flippedId, setFlippedId] = useState(null)
+  const isMobile = useMobile()
   const [projects, setProjects] = useState([
     { 
       id: 1, 
@@ -133,21 +135,20 @@ export const ProjectCards = () => {
   }
 
   useEffect(() => {
-    // Surgical removal of the Spline watermark from all spline-viewers in this section
-    const checkShadowRoot = setInterval(() => {
+    // Optimized watermark removal - run once after a short delay since Spline is lazy-loaded
+    const removeWatermark = () => {
       const viewers = document.querySelectorAll('spline-viewer');
       viewers.forEach(viewer => {
         if (viewer && viewer.shadowRoot) {
           const logo = viewer.shadowRoot.querySelector('#logo');
-          if (logo) {
-            logo.style.display = 'none';
-          }
+          if (logo) logo.style.display = 'none';
         }
       });
-    }, 100);
+    };
 
-    return () => clearInterval(checkShadowRoot);
-  }, []);
+    const timer = setTimeout(removeWatermark, 2000);
+    return () => clearTimeout(timer);
+  }, [projects]);
 
   return (
     <motion.section
@@ -191,7 +192,7 @@ export const ProjectCards = () => {
                   >
                     <div className="glass-panel relative z-10 w-full h-full overflow-hidden flex flex-col rounded-2xl border border-white/5 shadow-2xl">
                       <div className="absolute inset-0 z-0 opacity-100 transition-opacity duration-1000">
-                        {project.splineUrl ? (
+                        {project.splineUrl && !isMobile ? (
                           <div 
                             className="absolute inset-0 w-full h-full transform group-hover:scale-[0.48] transition-transform duration-[2000ms] ease-out pointer-events-none flex items-center justify-center"
                             style={{ 
@@ -260,7 +261,7 @@ export const ProjectCards = () => {
                     className={`absolute inset-0 w-full h-[400px] transition-all duration-100 ${isFlipped ? 'pointer-events-auto opacity-100' : 'pointer-events-none opacity-0'}`} 
                     style={{ backfaceVisibility: 'hidden', transform: 'rotateY(180deg)', zIndex: isFlipped ? 20 : 0 }}
                   >
-                    <div className={`glass-panel relative z-10 w-full h-full p-12 flex flex-col rounded-2xl border bg-black/40 backdrop-blur-3xl shadow-2xl ${
+                    <div className={`glass-panel relative z-10 w-full h-full p-12 flex flex-col rounded-2xl border bg-black/40 ${isMobile ? 'backdrop-blur-xl' : 'backdrop-blur-3xl'} shadow-2xl ${
                       project.glowColor === 'blue' ? 'border-blue-500/30' : 
                       project.glowColor === 'green' ? 'border-green-500/30' : 
                       'border-purple-500/30'

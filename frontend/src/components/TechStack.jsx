@@ -62,7 +62,7 @@ export const TechStack = () => {
   return (
     <section className="relative w-full h-[600px] py-32 overflow-hidden bg-black/20">
       <div className="absolute inset-0 z-0">
-        <Canvas>
+        <Canvas dpr={[1, 1.5]}>
           <PerspectiveCamera makeDefault position={[0, 0, 8]} />
           <ambientLight intensity={0.5} />
           <pointLight position={[10, 10, 10]} intensity={1} />
