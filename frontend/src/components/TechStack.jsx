@@ -87,7 +87,7 @@ export const TechStack = () => {
             ABOUT <br/> ME
           </h3>
           <p className="text-white/40 text-sm font-mono tracking-wider leading-relaxed">
-            Building complex digital infrastructures with high-performance 3D visuals and scalable backend ecosystems.
+            Final year CS student exploring the intersection of Cybersecurity and AI. I specialize in breaking down complex problems into clean, functional code with a passion for 3D world-building.
           </p>
         </div>
       </div>

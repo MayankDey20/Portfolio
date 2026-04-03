@@ -82,7 +82,18 @@ export const AboutSection = () => {
           >
             ENGINEERING <br/> DIGITAL <br/> REALITIES.
           </motion.h3>
-          <div className="flex flex-col gap-8 mt-24">
+
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="text-white/50 text-base md:text-lg font-mono leading-relaxed max-w-2xl mb-12"
+          >
+            Hi, I'm Mayank. I’m currently a final year student in Computer Science, where I spend most of my time exploring the intersection of Cybersecurity and Artificial Intelligence. What really excites me is using tech to solve real-world gaps. I like the challenge of taking a complex problem and breaking it down into clean, functional code. Beyond my studies, I’m a big fan of game design and 3D world-building, which started as a hobby but has turned into a favorite way to stay creative.
+          </motion.p>
+
+          <div className="flex flex-col gap-8 mt-12">
             <h4 className="text-white/80 text-[10px] tracking-[0.5em] uppercase font-mono font-bold border-l-2 border-purple-500/30 pl-4">Interests</h4>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {pillars.map((pillar, index) => (
