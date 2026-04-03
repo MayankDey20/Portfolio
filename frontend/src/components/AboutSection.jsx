@@ -53,9 +53,18 @@ export const AboutSection = () => {
   ]
 
   const pillars = [
-    { name: 'CYBERSECURITY', desc: 'Safeguarding digital frontiers with proactive threat intelligence and robust architectural defense.' },
-    { name: 'AI', desc: 'Engineering intelligent interfaces and LLM-driven systems that push the boundaries of automation.' },
-    { name: 'GAME DESIGN', desc: 'Crafting immersive 3D realities and interactive mechanics for next-generation digital experiences.' }
+    { 
+      name: 'CYBERSECURITY', 
+      desc: 'I’ve always been fascinated by how systems can be broken and fixed. I love finding vulnerabilities before they become problems, and I hope to eventually build architectures that are actually resilient to real-world threats.' 
+    },
+    { 
+      name: 'AI', 
+      desc: 'Working with LLMs and smart interfaces is what really excites me right now. I like exploring how we can use automation to solve actual human problems, rather than just making things "faster."' 
+    },
+    { 
+      name: 'GAME DESIGN', 
+      desc: 'This is my favorite hobby. I love playing games and spending my free time messing around with new 3D artifacts and mechanics to see how they work. It’s just fun for me to experiment with building immersive realities and seeing a digital world come to life.' 
+    }
   ]
 
   return (
