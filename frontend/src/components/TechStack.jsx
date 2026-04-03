@@ -84,7 +84,7 @@ export const TechStack = () => {
         <div className="w-12 h-px bg-white/10 mb-12" />
         <div className="max-w-md">
           <h3 className="metallic-text text-4xl md:text-6xl font-bold tracking-tighter mb-6 leading-none">
-            ARCHITECTURAL <br/> CAPABILITIES
+            ABOUT <br/> ME
           </h3>
           <p className="text-white/40 text-sm font-mono tracking-wider leading-relaxed">
             Building complex digital infrastructures with high-performance 3D visuals and scalable backend ecosystems.
