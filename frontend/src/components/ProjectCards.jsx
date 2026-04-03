@@ -172,10 +172,10 @@ export const ProjectCards = () => {
             return (
               <div key={project.id} className={`w-full md:w-[600px] ${index % 2 === 0 ? 'self-start' : 'self-end'}`}>
                 <motion.div
-                  className="group relative w-full flex flex-col min-h-[400px] cursor-pointer"
+                  className="group relative w-full flex flex-col min-h-[400px] cursor-pointer will-change-transform"
                   variants={cardVariants}
                   animate={isFlipped ? { rotateY: 180 } : { rotateY: 0 }}
-                  transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
+                  transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
                   style={{ transformStyle: 'preserve-3d' }}
                 >
                   {/* Behind-the-Box Backlight Glow */}
@@ -190,10 +190,13 @@ export const ProjectCards = () => {
                     style={{ backfaceVisibility: 'hidden', zIndex: isFlipped ? 0 : 20 }}
                   >
                     <div className="glass-panel relative z-10 w-full h-full overflow-hidden flex flex-col rounded-2xl border border-white/5 shadow-2xl">
-                      <div className="absolute inset-0 z-0 opacity-100 transition-opacity duration-1000">
+                      <div 
+                        className="absolute inset-0 z-0 opacity-100 transition-opacity duration-1000 will-change-opacity"
+                        style={{ display: isFlipped ? 'none' : 'block' }}
+                      >
                         {project.splineUrl && !isMobile ? (
                           <div
-                            className="absolute inset-0 w-full h-full transform group-hover:scale-[0.48] transition-transform duration-[2000ms] ease-out pointer-events-none flex items-center justify-center"
+                            className="absolute inset-0 w-full h-full transform transition-transform duration-[2000ms] ease-out pointer-events-none flex items-center justify-center will-change-transform"
                             style={{
                               transform: `scale(${project.splineConfig?.scale || 0.45}) translate(${project.splineConfig?.x || 0}%, ${project.splineConfig?.y || 0}%)`
                             }}
@@ -207,7 +210,7 @@ export const ProjectCards = () => {
                             />
                           </div>
                         ) : (
-                          <div className="absolute inset-0 opacity-40 group-hover:opacity-80 transition-opacity duration-1000">
+                          <div className="absolute inset-0 opacity-40 group-hover:opacity-80 transition-opacity duration-1000 will-change-opacity">
                             <OrbVisual type={project.imagePlaceholder} />
                           </div>
                         )}
@@ -256,7 +259,7 @@ export const ProjectCards = () => {
                     className={`absolute inset-0 w-full h-[400px] transition-all duration-100 ${isFlipped ? 'pointer-events-auto opacity-100' : 'pointer-events-none opacity-0'}`}
                     style={{ backfaceVisibility: 'hidden', transform: 'rotateY(180deg)', zIndex: isFlipped ? 20 : 0 }}
                   >
-                    <div className={`glass-panel relative z-10 w-full h-full p-12 flex flex-col rounded-2xl border bg-black/40 ${isMobile ? 'backdrop-blur-xl' : 'backdrop-blur-3xl'} shadow-2xl ${project.glowColor === 'blue' ? 'border-blue-500/30' :
+                    <div className={`glass-panel relative z-10 w-full h-full p-12 flex flex-col rounded-2xl border bg-black/40 ${isMobile ? 'backdrop-blur-xl' : 'backdrop-blur-3xl'} shadow-2xl will-change-transform ${project.glowColor === 'blue' ? 'border-blue-500/30' :
                       project.glowColor === 'green' ? 'border-green-500/30' :
                         'border-purple-500/30'
                       }`}>
