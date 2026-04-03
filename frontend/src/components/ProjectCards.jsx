@@ -6,6 +6,7 @@ import Footer from './Footer'
 import { FloatingTechIcons } from './FloatingTechIcons'
 import ProjectTechCubes from './ProjectTechCubes'
 import useMobile from '../hooks/useMobile'
+import LanguageGlobe from './LanguageGlobe'
 
 const OrbVisual = ({ type }) => {
   const orbColors = {
@@ -86,7 +87,7 @@ export const ProjectCards = () => {
     {
       id: 3,
       title: 'TribalBridge',
-      imagePlaceholder: 'orb-cyan',
+      visualType: 'globe',
       category: 'Multi-Language Translator for Minority Languages',
       glowColor: 'green',
       description: 'TribalBridge is a cross-platform infrastructure layer designed to connect decentralized communities through high-fidelity immersive environments. It serves as a bridge between legacy social systems and the evolving spatial web.',
@@ -236,7 +237,11 @@ const ProjectCard = ({ project, index, isMobile, flippedId, setFlippedId, cardVa
               className="absolute inset-0 z-0 opacity-100 transition-opacity duration-1000 will-change-opacity"
               style={{ display: (isFlipped || !isInView) ? 'none' : 'block' }}
             >
-              {project.splineUrl && !isMobile && hasBeenInView ? (
+              {project.visualType === 'globe' && hasBeenInView ? (
+                <div className="absolute inset-0 w-full h-full flex items-center justify-center">
+                   <LanguageGlobe />
+                </div>
+              ) : project.splineUrl && !isMobile && hasBeenInView ? (
                 <div
                   className="absolute inset-0 w-full h-full transform transition-transform duration-[2000ms] ease-out pointer-events-none flex items-center justify-center will-change-transform"
                   style={{
