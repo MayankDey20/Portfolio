@@ -7,7 +7,6 @@ const LanguageLabel = ({ text, position }) => {
   return (
     <Float speed={2} rotationIntensity={0.5} floatIntensity={0.5} position={position}>
       <Text
-        font="/fonts/Inter-Bold.woff" // Assuming standard font path or default
         fontSize={0.2}
         color="#00f7ff"
         anchorX="center"

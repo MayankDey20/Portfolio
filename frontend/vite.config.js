@@ -14,7 +14,7 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      three: 'three'
+      'three': 'three'
     }
   }
 })

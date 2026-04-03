@@ -2,7 +2,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const techIcons = {
-  // Languages & Frameworks
   'PYTHON': 'https://cdn.simpleicons.org/python/3776AB',
   'REACT': 'https://cdn.simpleicons.org/react/61DAFB',
   'FASTAPI': 'https://cdn.simpleicons.org/fastapi/009688',
@@ -21,13 +20,14 @@ const techIcons = {
   'TYPESCRIPT': 'https://cdn.simpleicons.org/typescript/3178C6',
   'JAVASCRIPT': 'https://cdn.simpleicons.org/javascript/F7DF1E',
   'NEXT.JS': 'https://cdn.simpleicons.org/nextdotjs/ffffff',
-  'CHROMADB': 'https://cdn.simpleicons.org/googlecloud/ffffff', // Fallback to a cloud-like icon if chroma isn't on simpleicons yet
+  'CHROMADB': 'https://cdn.simpleicons.org/googlecloud/ffffff',
   'OLLAMA': 'https://cdn.simpleicons.org/ollama/ffffff',
-  'TIPTAP': 'https://cdn.simpleicons.org/probot/ffffff', // Using a generic automation icon for TipTap
+  'TIPTAP': 'https://cdn.simpleicons.org/probot/ffffff',
 };
 
 const FloatingIcon = ({ name, color, delay }) => {
-  const iconUrl = techIcons[name.toUpperCase()] || `https://cdn.simpleicons.org/react/${color.replace('#', '')}`;
+  const safeColor = (color || '#61DAFB').replace('#', '');
+  const iconUrl = techIcons[name.toUpperCase()] || `https://cdn.simpleicons.org/react/${safeColor}`;
   
   return (
     <motion.div
@@ -65,7 +65,6 @@ const FloatingIcon = ({ name, color, delay }) => {
         />
       </div>
       
-      {/* Tooltip */}
       <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 pointer-events-none transition-all duration-300 transform group-hover:-translate-y-2">
         <div className="bg-black/80 backdrop-blur-md border border-white/10 px-3 py-1 rounded-md text-[8px] font-mono tracking-widest uppercase text-white whitespace-nowrap shadow-xl">
           {name}
@@ -76,11 +75,12 @@ const FloatingIcon = ({ name, color, delay }) => {
 };
 
 export const FloatingTechIcons = ({ techs, themeColor }) => {
+  if (!techs) return null;
   return (
     <div className="flex flex-wrap gap-4 mt-2">
       {techs.map((tech, i) => (
         <FloatingIcon 
-          key={tech.name} 
+          key={`${tech.name}-${i}`} 
           name={tech.name} 
           color={tech.color} 
           delay={i * 0.1} 
