@@ -11,13 +11,18 @@ const techIcons = {
   'REDIS': 'https://cdn.simpleicons.org/redis/DC382D',
   'WEBSOCKET': 'https://cdn.simpleicons.org/socketdotio/ffffff',
   'JWT': 'https://cdn.simpleicons.org/jsonwebtokens/ffffff',
-  'NUCLEI': 'https://avatars.githubusercontent.com/u/50972139?s=200&v=4', // ProjectDiscovery Official Logo
   'NODE': 'https://cdn.simpleicons.org/nodedotjs/339933',
   'AWS': 'https://cdn.simpleicons.org/amazonaws/FF9900',
   'POSTGRESQL': 'https://cdn.simpleicons.org/postgresql/4169E1',
   'UNITY': 'https://cdn.simpleicons.org/unity/ffffff',
   'THREE.JS': 'https://cdn.simpleicons.org/threedotjs/ffffff',
   'C#': 'https://cdn.simpleicons.org/csharp/239120',
+  'DOCKER': 'https://cdn.simpleicons.org/docker/2496ED',
+  'TYPESCRIPT': 'https://cdn.simpleicons.org/typescript/3178C6',
+  'NEXT.JS': 'https://cdn.simpleicons.org/nextdotjs/ffffff',
+  'CHROMADB': 'https://cdn.simpleicons.org/googlecloud/ffffff', // Fallback to a cloud-like icon if chroma isn't on simpleicons yet
+  'OLLAMA': 'https://cdn.simpleicons.org/ollama/ffffff',
+  'TIPTAP': 'https://cdn.simpleicons.org/probot/ffffff', // Using a generic automation icon for TipTap
 };
 
 const FloatingIcon = ({ name, color, delay }) => {
