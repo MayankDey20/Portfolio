@@ -57,37 +57,37 @@ export const ProjectCards = () => {
         { name: 'NUCLEI', color: '#ffffff' }
       ]
     },
-    { 
-      id: 2, 
-      title: 'Narrative Flow', 
-      imagePlaceholder: 'orb-purple', 
-      category: 'AI- Co-writing Platform',
-      glowColor: 'purple',
-      splineUrl: 'https://prod.spline.design/QPKs0kpS2CvawGmE/scene.splinecode',
-      splineConfig: { scale: 0.45, x: -5, y: -10 },
-      description: 'Narrative Flow is an AI-powered story co-writing platform that harmonizes human creativity with large language models. It offers a dynamic environment for novelists and screenwriters to brainstorm, structure, and refine complex narratives in real-time.',
-      githubUrl: 'https://github.com/MayankDey20/NarrativeFlow',
-      techStack: [
-        { name: 'NODE', color: '#339933' },
-        { name: 'REDIS', color: '#DC382D' },
-        { name: 'AWS', color: '#FF9900' },
-        { name: 'REACT', color: '#61DAFB' }
-      ]
-    },
-    { 
-      id: 3, 
-      title: 'TribalBridge', 
-      imagePlaceholder: 'orb-cyan', 
-      category: 'IMMERSIVE',
-      glowColor: 'green',
-      description: 'TribalBridge is a cross-platform infrastructure layer designed to connect decentralized communities through high-fidelity immersive environments. It serves as a bridge between legacy social systems and the evolving spatial web.',
-      githubUrl: 'https://github.com/MayankDey20/TribalBridge',
-      techStack: [
-        { name: 'UNITY', color: '#ffffff' },
-        { name: 'THREE.JS', color: '#ffffff' },
-        { name: 'C#', color: '#239120' }
-      ]
-    }
+      { 
+        id: 2, 
+        title: 'Narrative Flow', 
+        imagePlaceholder: 'orb-purple', 
+        category: 'AI- Co-writing Platform',
+        glowColor: 'purple',
+        splineUrl: 'https://prod.spline.design/QPKs0kpS2CvawGmE/scene.splinecode',
+        splineConfig: { scale: 0.45, x: -5, y: -10 },
+        description: 'Narrative Flow is an AI-powered story co-writing platform that harmonizes human creativity with large language models. It offers a dynamic environment for novelists and screenwriters to brainstorm, structure, and refine complex narratives in real-time.',
+        githubUrl: 'https://github.com/MayankDey20/NarrativeAI',
+        techStack: [
+          { name: 'NODE', color: '#339933' },
+          { name: 'REDIS', color: '#DC382D' },
+          { name: 'AWS', color: '#FF9900' },
+          { name: 'REACT', color: '#61DAFB' }
+        ]
+      },
+      { 
+        id: 3, 
+        title: 'TribalBridge', 
+        imagePlaceholder: 'orb-cyan', 
+        category: 'Multi-Language Translator for Minority Languages',
+        glowColor: 'green',
+        description: 'TribalBridge is a cross-platform infrastructure layer designed to connect decentralized communities through high-fidelity immersive environments. It serves as a bridge between legacy social systems and the evolving spatial web.',
+        githubUrl: 'https://github.com/MayankDey20/TribalBridge',
+        techStack: [
+          { name: 'UNITY', color: '#ffffff' },
+          { name: 'THREE.JS', color: '#ffffff' },
+          { name: 'C#', color: '#239120' }
+        ]
+      }
   ])
   useEffect(() => {
     const fetchProjects = async () => {
