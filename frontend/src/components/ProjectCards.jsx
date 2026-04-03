@@ -185,6 +185,7 @@ export const ProjectCards = () => {
 }
 
 const ProjectCard = ({ project, index, isMobile, flippedId, setFlippedId, cardVariants }) => {
+  const [isInView, setIsInView] = useState(false);
   const [hasBeenInView, setHasBeenInView] = useState(false);
   const cardRef = React.useRef(null);
   const isFlipped = flippedId === project.id;
@@ -192,12 +193,12 @@ const ProjectCard = ({ project, index, isMobile, flippedId, setFlippedId, cardVa
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
+        setIsInView(entry.isIntersecting);
         if (entry.isIntersecting) {
           setHasBeenInView(true);
-          observer.disconnect();
         }
       },
-      { threshold: 0.1, rootMargin: '200px' }
+      { threshold: 0.1, rootMargin: '400px' } // Larger margin to pre-load before it hits the screen
     );
 
     if (cardRef.current) {
@@ -233,7 +234,7 @@ const ProjectCard = ({ project, index, isMobile, flippedId, setFlippedId, cardVa
           <div className="glass-panel relative z-10 w-full h-full overflow-hidden flex flex-col rounded-2xl border border-white/5 shadow-2xl">
             <div 
               className="absolute inset-0 z-0 opacity-100 transition-opacity duration-1000 will-change-opacity"
-              style={{ display: isFlipped ? 'none' : 'block' }}
+              style={{ display: (isFlipped || !isInView) ? 'none' : 'block' }}
             >
               {project.splineUrl && !isMobile && hasBeenInView ? (
                 <div
