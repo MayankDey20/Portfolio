@@ -85,7 +85,7 @@ export const ProjectCards = () => {
     {
       id: 3,
       title: 'TribalBridge',
-      visualType: 'globe',
+      imagePlaceholder: '/images/project3.png',
       category: 'Multi-Language Translator for Minority Languages',
       glowColor: 'green',
       description: 'TribalBridge is a cross-platform infrastructure layer designed to connect decentralized communities through high-fidelity immersive environments. It serves as a bridge between legacy social systems and the evolving spatial web.',
