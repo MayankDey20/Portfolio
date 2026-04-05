@@ -23,15 +23,15 @@ export const ContactSection = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="px-10 py-5 bg-white text-black font-bold text-xs tracking-[0.4em] uppercase rounded-full shadow-[0_0_20px_rgba(255,255,255,0.4)] hover:shadow-[0_0_40px_rgba(255,255,255,0.6)] transition-all duration-300"
-              onClick={() => alert('Initiating Blueprint Download...')}
+              onClick={() => alert('Initiating Resume Download...')}
             >
-              Download Blueprint
+              Download Resume
             </motion.button>
 
             <div className="flex gap-12 ml-4">
-              <a 
-                href="https://github.com/MayankDey20" 
-                target="_blank" 
+              <a
+                href="https://github.com/MayankDey20"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="text-white/20 hover:text-white transition-all duration-500 flex flex-col items-center group"
               >
@@ -40,9 +40,9 @@ export const ContactSection = () => {
                 </svg>
                 <div className="w-8 h-[2px] bg-white/5 group-hover:bg-purple-500/50 transition-colors" />
               </a>
-              <a 
-                href="https://www.linkedin.com/in/mayank-dey-493539251/" 
-                target="_blank" 
+              <a
+                href="https://www.linkedin.com/in/mayank-dey-493539251/"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="text-white/20 hover:text-white transition-all duration-500 flex flex-col items-center group"
               >
