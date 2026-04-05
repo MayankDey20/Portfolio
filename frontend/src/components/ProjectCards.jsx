@@ -41,11 +41,9 @@ export const ProjectCards = () => {
     {
       id: 1,
       title: 'SecureScan Pro',
-      imagePlaceholder: 'orb-blue',
+      imagePlaceholder: '/images/project1.png',
       category: 'Automated Web Application Vulnerability Scanner',
       glowColor: 'blue',
-      splineUrl: 'https://prod.spline.design/CVAJTOdIz-o93tKW/scene.splinecode',
-      splineConfig: { scale: 0.45, x: -32, y: -18 },
       description: 'SecureScan Pro is an advanced, distributed web vulnerability scanner and threat intelligence platform. It provides organizations and security professionals with a unified dashboard to proactively discover, analyze, and remediate security flaws across their web infrastructure.\n\nBy combining active vulnerability scanning with machine learning-powered threat intelligence and real-time reporting, SecureScan Pro offers a holistic view of an asset\'s security posture.',
       githubUrl: 'https://github.com/MayankDey20/SecureScanPro',
       techStack: [
@@ -254,6 +252,14 @@ const ProjectCard = ({ project, index, isMobile, flippedId, setFlippedId, cardVa
                     style={{ width: '100%', height: '100%', filter: 'brightness(1.6) contrast(1.1)' }}
                     hint="none"
                     loading="lazy"
+                  />
+                </div>
+              ) : project.imagePlaceholder?.startsWith('/images/') ? (
+                <div className="absolute inset-0 w-full h-full">
+                  <img 
+                    src={project.imagePlaceholder} 
+                    alt={project.title} 
+                    className="w-full h-full object-cover opacity-60 group-hover:opacity-90 transition-opacity duration-1000 will-change-opacity" 
                   />
                 </div>
               ) : (
