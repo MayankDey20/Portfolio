@@ -12,7 +12,7 @@ const techIcons = {
   'WEBSOCKET': 'https://cdn.simpleicons.org/socketdotio/ffffff',
   'JWT': 'https://cdn.simpleicons.org/jsonwebtokens/ffffff',
   'NODE': 'https://cdn.simpleicons.org/nodedotjs/339933',
-  'AWS': 'https://cdn.simpleicons.org/amazonaws/FF9900',
+  'AWS': 'https://cdn.simpleicons.org/amazonwebservices/FF9900',
   'POSTGRESQL': 'https://cdn.simpleicons.org/postgresql/4169E1',
   'UNITY': 'https://cdn.simpleicons.org/unity/ffffff',
   'THREE.JS': 'https://cdn.simpleicons.org/threedotjs/ffffff',
@@ -21,9 +21,9 @@ const techIcons = {
   'TYPESCRIPT': 'https://cdn.simpleicons.org/typescript/3178C6',
   'JAVASCRIPT': 'https://cdn.simpleicons.org/javascript/F7DF1E',
   'NEXT.JS': 'https://cdn.simpleicons.org/nextdotjs/ffffff',
-  'CHROMADB': 'https://cdn.simpleicons.org/googlecloud/ffffff', // Fallback to a cloud-like icon if chroma isn't on simpleicons yet
+  'CHROMADB': 'https://cdn.simpleicons.org/googlecloud/ffffff',
   'OLLAMA': 'https://cdn.simpleicons.org/ollama/ffffff',
-  'TIPTAP': 'https://cdn.simpleicons.org/probot/ffffff', // Using a generic automation icon for TipTap
+  'TIPTAP': 'https://cdn.simpleicons.org/probot/ffffff',
 };
 
 const FloatingIcon = ({ name, color, delay }) => {

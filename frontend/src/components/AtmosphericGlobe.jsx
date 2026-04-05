@@ -210,20 +210,18 @@ export default function AtmosphericGlobe() {
         </motion.p>
       </div>
 
-      <div className="relative w-full h-[600px] mt-[-100px]">
-        {isInView && (
-          <Canvas camera={{ position: [0, 0, 12], fov: 45 }}>
-            <ambientLight intensity={0.5} />
-            <pointLight position={[10, 10, 10]} intensity={1} />
-            <AtmosphericSphere onHover={handleHover} />
-            <OrbitControls 
-              enableZoom={false} 
-              enablePan={false} 
-              rotateSpeed={0.5}
-              dampingFactor={0.05}
-            />
-          </Canvas>
-        )}
+      <div className="relative w-full h-[600px] mt-[-100px] min-h-[500px]">
+        <Canvas camera={{ position: [0, 0, 12], fov: 45 }}>
+          <ambientLight intensity={0.5} />
+          <pointLight position={[10, 10, 10]} intensity={1} />
+          <AtmosphericSphere onHover={handleHover} />
+          <OrbitControls 
+            enableZoom={false} 
+            enablePan={false} 
+            rotateSpeed={0.5}
+            dampingFactor={0.05}
+          />
+        </Canvas>
 
         {/* Location Popup */}
         <AnimatePresence>
@@ -267,7 +265,7 @@ export default function AtmosphericGlobe() {
         className="relative z-30 pb-20"
       >
         <a 
-          href="mailto:mayank.dey20@gmail.com" 
+          href="mailto:dey.mayank567@gmail.com" 
           className="group relative inline-flex items-center gap-4 bg-white text-black px-8 py-4 rounded-full font-bold overflow-hidden transition-all hover:pr-12"
         >
           <span className="relative z-10">Get In Touch</span>
