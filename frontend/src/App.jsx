@@ -5,6 +5,7 @@ import TechStack from './components/TechStack'
 import SplineRobot from './components/SplineRobot'
 import ProjectCards from './components/ProjectCards'
 import ContactSection from './components/ContactSection'
+import AtmosphericGlobe from './components/AtmosphericGlobe'
 import Footer from './components/Footer'
 
 import SmoothScroll from './components/SmoothScroll'
@@ -40,6 +41,9 @@ function App() {
         
         {/* Contact Gateway */}
         <ContactSection />
+        
+        {/* Dynamic Atmospheric Globe CTA */}
+        <AtmosphericGlobe />
         
         {/* Site Footer */}
         <Footer />
