@@ -6,7 +6,7 @@ import Footer from './Footer'
 import { FloatingTechIcons } from './FloatingTechIcons'
 import ProjectTechCubes from './ProjectTechCubes'
 import useMobile from '../hooks/useMobile'
-import LanguageGlobe from './LanguageGlobe'
+
 
 const OrbVisual = ({ type }) => {
   const orbColors = {
@@ -235,11 +235,7 @@ const ProjectCard = ({ project, index, isMobile, flippedId, setFlippedId, cardVa
               className="absolute inset-0 z-0 opacity-100 transition-opacity duration-1000 will-change-opacity"
               style={{ display: (isFlipped || !isInView) ? 'none' : 'block' }}
             >
-              {project.visualType === 'globe' && hasBeenInView ? (
-                <div className="absolute inset-0 w-full h-full flex items-center justify-center">
-                   <LanguageGlobe />
-                </div>
-              ) : project.splineUrl && !isMobile && hasBeenInView ? (
+              {project.splineUrl && !isMobile && hasBeenInView ? (
                 <div
                   className="absolute inset-0 w-full h-full transform transition-transform duration-[2000ms] ease-out pointer-events-none flex items-center justify-center will-change-transform"
                   style={{
