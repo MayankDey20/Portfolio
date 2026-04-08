@@ -37,7 +37,6 @@ const TechCube = ({ name, color, position }) => {
           position={[0, 0, 0.61]}
           fontSize={0.2}
           color="white"
-          font="https://fonts.gstatic.com/s/outfit/v11/QGYsz_OzzM_Qpx47mHmNw777.woff"
           anchorX="center"
           anchorY="middle"
         >
