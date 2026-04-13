@@ -79,3 +79,4 @@ app.get('/api/projects/:id', (req, res) => {
 })
 
 export const handler = serverless(app)
+

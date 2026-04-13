@@ -86,3 +86,4 @@ export const ProjectTechCubes = ({ techs = [] }) => {
 }
 
 export default ProjectTechCubes
+

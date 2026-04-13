@@ -374,3 +374,4 @@ const ProjectCard = ({ project, index, isMobile, flippedId, setFlippedId, cardVa
 };
 
 export default ProjectCards
+

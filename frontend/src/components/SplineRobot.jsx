@@ -34,3 +34,4 @@ export const SplineRobot = () => {
 }
 
 export default SplineRobot
+

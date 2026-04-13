@@ -89,3 +89,4 @@ export const FloatingTechIcons = ({ techs, themeColor }) => {
     </div>
   );
 };
+
