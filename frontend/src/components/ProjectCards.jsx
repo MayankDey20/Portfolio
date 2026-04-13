@@ -251,7 +251,7 @@ const ProjectCard = ({ project, index, isMobile, flippedId, setFlippedId, cardVa
                     loading="lazy"
                   />
                 </div>
-              ) : project.imagePlaceholder?.includes('.png') ? (
+              ) : !project.imagePlaceholder?.startsWith('orb-') ? (
                 <div className="absolute inset-0 w-full h-full">
                   <img 
                     src={project.imagePlaceholder} 
