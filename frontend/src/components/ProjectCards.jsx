@@ -6,6 +6,8 @@ import Footer from './Footer'
 import { FloatingTechIcons } from './FloatingTechIcons'
 import ProjectTechCubes from './ProjectTechCubes'
 import useMobile from '../hooks/useMobile'
+import project1Img from '../assets/project1.png'
+import project3Img from '../assets/project3.png'
 
 const OrbVisual = ({ type }) => {
   const orbColors = {
@@ -40,7 +42,7 @@ export const ProjectCards = () => {
     {
       id: 1,
       title: 'SecureScan Pro',
-      imagePlaceholder: '/images/project1.png',
+      imagePlaceholder: project1Img,
       category: 'Automated Web Application Vulnerability Scanner',
       glowColor: 'blue',
       description: 'SecureScan Pro is an advanced, distributed web vulnerability scanner and threat intelligence platform. It provides organizations and security professionals with a unified dashboard to proactively discover, analyze, and remediate security flaws across their web infrastructure.\n\nBy combining active vulnerability scanning with machine learning-powered threat intelligence and real-time reporting, SecureScan Pro offers a holistic view of an asset\'s security posture.',
@@ -84,7 +86,7 @@ export const ProjectCards = () => {
     {
       id: 3,
       title: 'TribalBridge',
-      imagePlaceholder: '/images/project3.png',
+      imagePlaceholder: project3Img,
       category: 'Multi-Language Translator for Minority Languages',
       glowColor: 'green',
       description: 'TribalBridge is a cross-platform infrastructure layer designed to connect decentralized communities through high-fidelity immersive environments. It serves as a bridge between legacy social systems and the evolving spatial web.',
@@ -249,7 +251,7 @@ const ProjectCard = ({ project, index, isMobile, flippedId, setFlippedId, cardVa
                     loading="lazy"
                   />
                 </div>
-              ) : project.imagePlaceholder?.startsWith('/images/') ? (
+              ) : project.imagePlaceholder?.includes('.png') ? (
                 <div className="absolute inset-0 w-full h-full">
                   <img 
                     src={project.imagePlaceholder} 
