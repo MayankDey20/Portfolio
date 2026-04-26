@@ -8,7 +8,7 @@ const MiniCube = ({ name, color, position }) => {
   
   useFrame((state) => {
     if (mesh.current) {
-      // Overclock effect: 5x speed on hover
+      // Overclock effect
       mesh.current.rotation.x += 0.01 * (hovered ? 5 : 1)
       mesh.current.rotation.y += 0.01 * (hovered ? 5 : 1)
       
@@ -53,7 +53,7 @@ const MiniCube = ({ name, color, position }) => {
 }
 
 export const ProjectTechCubes = ({ techs = [] }) => {
-  // Default stack if none provided
+  // Default stack 
   const displayTechs = techs.length > 0 ? techs : [
     { name: 'PYTHON', color: '#3776AB', pos: [-2, 0, 0] },
     { name: 'REACT', color: '#61DAFB', pos: [0, 0, 0] },

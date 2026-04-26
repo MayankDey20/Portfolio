@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 
 export const SplineRobot = () => {
   useEffect(() => {
-    // Surgical removal of the Spline watermark
+    // removal of the Spline watermark
     const checkShadowRoot = setInterval(() => {
       const viewer = document.querySelector('spline-viewer');
       if (viewer && viewer.shadowRoot) {

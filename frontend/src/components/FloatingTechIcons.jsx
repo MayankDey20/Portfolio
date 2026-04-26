@@ -21,9 +21,9 @@ const techIcons = {
   'TYPESCRIPT': 'https://cdn.simpleicons.org/typescript/3178C6',
   'JAVASCRIPT': 'https://cdn.simpleicons.org/javascript/F7DF1E',
   'NEXT.JS': 'https://cdn.simpleicons.org/nextdotjs/ffffff',
-  'CHROMADB': 'https://cdn.simpleicons.org/googlecloud/ffffff', // Fallback to a cloud-like icon if chroma isn't on simpleicons yet
+  'CHROMADB': 'https://cdn.simpleicons.org/googlecloud/ffffff',
   'OLLAMA': 'https://cdn.simpleicons.org/ollama/ffffff',
-  'TIPTAP': 'https://cdn.simpleicons.org/probot/ffffff', // Using a generic automation icon for TipTap
+  'TIPTAP': 'https://cdn.simpleicons.org/probot/ffffff', 
 };
 
 const FloatingIcon = ({ name, color, delay }) => {

@@ -12,7 +12,7 @@ export const Footer = () => {
             <h3 className="text-white text-xl font-bold tracking-tighter uppercase font-mono">Mayank Dey | AI Intern</h3>
           </div>
           <p className="text-white/20 text-[10px] tracking-[0.4em] uppercase font-mono">
-            © {currentYear} Digital Frontier. All Protocols Reserved.
+            © {currentYear} Digital Portfolio . All Protocols Reserved.
           </p>
         </div>
         
