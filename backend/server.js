@@ -87,8 +87,8 @@ app.use((err, req, res, next) => {
 
 if (process.env.NODE_ENV !== 'production') {
   app.listen(PORT, () => {
-    console.log(`🚀 Server running at http://localhost:${PORT}`)
-    console.log(`📦 API available at http://localhost:${PORT}/api/projects`)
+    console.log(` Server running at http://localhost:${PORT}`)
+    console.log(` API available at http://localhost:${PORT}/api/projects`)
   })
 }
 

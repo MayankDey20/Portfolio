@@ -14,7 +14,7 @@ const mockProjects = [
     glowColor: 'blue',
     splineUrl: 'https://prod.spline.design/CVAJTOdIz-o93tKW/scene.splinecode',
     splineConfig: { scale: 0.45, x: -32, y: -18 },
-    description: 'SecureScan Pro is an advanced, distributed web vulnerability scanner and threat intelligence platform. It provides organizations and security professionals with a unified dashboard to proactively discover, analyze, and remediate security flaws across their web infrastructure.\n\nBy combining active vulnerability scanning with machine learning-powered threat intelligence and real-time reporting, SecureScan Pro offers a holistic view of an asset\'s security posture.',
+    description: 'SecureScan Pro is an advanced, distributed web vulnerability scanner and threat intelligence platform. It provides organizations and security professionals with a unified dashboard to proactively discover, analyze, and remediate security flaws across their web infrastructure.\n\nBy combining active vulnerability scanning with ML-powered threat intelligence and real-time reporting, SecureScan Pro offers a holistic view of an asset\'s security posture.',
     githubUrl: 'https://github.com/MayankDey20/SecureScanPro',
     imagePlaceholder: 'orb-blue',
     imagePlaceholder: 'orb-blue',
